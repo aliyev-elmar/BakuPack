@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap');
+$font2:'Work Sans', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+$font1: 'Montserrat', sans-serif;
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+a, button, i{
+    transition: $transition;
+}
+a, a:hover{
+    text-decoration: none !important;
+}
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none !important;
+}
+button{
+    border: none;
+}
+button:focus{
+    outline: none !important;
+}
+section{
+    padding: 90px 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 0px;
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: $grey;
+    border-radius: 8px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: $grey;
+}
+
+body p{
+    margin-bottom: 0;
+    color: $black;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: $font1;
+}
+p, span, button, a, input, textarea, input::placeholder{
+    font-family: $font2;
+}
+
+.title{
+    font-family: $font1;
+    font-weight: 700;
+    font-size: 35px;
+    text-align: center;
+    color: $black;
+    margin-bottom: 35px;
+}
+.subtitle{
+    font-family: $font2;
+    color: $black;
+    font-size: 16px;
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}

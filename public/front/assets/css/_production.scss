@@ -1,0 +1,94 @@
+#production{
+    padding-top: 50px;
+    padding-bottom: 150px;
+    z-index: 2;
+    .title-div{
+        text-align: center;
+    }
+    .title{
+        display: inline-block;
+        position: relative;
+        font-size: 45px;
+        &:before{
+            content: '';
+            position: absolute;
+            left: -50px;
+            top:-30px;
+            background-color: #FD8977;
+            width: 71px;
+            height:71px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+    }
+    .production-title{
+        font-family: $font1;
+        font-weight: 700;
+        font-size: 29px;
+    }
+    p{
+        color: $black;
+    }
+    .row{
+        align-items: center;
+    }
+    .col-lg-6:nth-child(2), .col-lg-6:nth-child(3){
+        text-align: center;
+    } 
+    .col-lg-6{
+        margin-top: 100px;
+    }
+    .col-lg-6:last-child{
+        position: relative;
+    }
+    .point{
+        width: 100px;
+        height: 100px;
+        background: transparent;
+        border: 10px solid #FD8977;
+        position: absolute;
+        right: 150px;
+        border-radius: 50%;
+        top:-100px;
+    }
+    .col-lg-6:nth-child(2){
+        &:before{
+            content: '';
+            position: absolute;
+            background: url(../images/bg/point.svg) no-repeat;
+            background-size: contain;
+            width: 185px;
+            right: 200px;
+            height: 189px;
+            top: -60px;
+            z-index: 1;
+        }
+        img{
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0px 0px 10px rgba(123, 123, 123, 0.25)
+        }
+    }
+    .col-lg-6:nth-child(3){
+        &:before{
+            content: '';
+            position: absolute;
+            background: url(../images/bg/point.svg) no-repeat;
+            background-size: contain;
+            width: 185px;
+            right: 25px;
+            height: 189px;
+            bottom: -60px;
+            z-index: 1;
+        }
+        img{
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0px 0px 10px rgba(123, 123, 123, 0.25)
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.main-section{
+    background: white;
+    padding-bottom: 0;
+    margin-top: 600px;
+    position: relative;
+    border-radius: 0 150px 0 0;
+    z-index: 2;
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        background: #F6F5F0;
+        border-radius: 0 0 0 150px;
+        width: 100px;
+        height: 800px;
+        top:-800px;
+        z-index: 2;
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        background: white;
+        top:-100px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.top-page{
+    position: fixed;
+    background: #F6F5F0;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 800px;
+    z-index: 1;
+    padding-top: 130px;
+    padding-bottom: 130px;
+}

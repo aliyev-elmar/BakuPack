@@ -53,7 +53,7 @@
                         <span class="point"></span>
                         <h2 class="title">Baku Polygraphy</h2>
                         <p>BakuPolygraphy 50 nəfərə yaxın heyətdən ibarət olan və yeni avadlıqlarla təmin olunan şirkətdir və bütün növ karton qutu və qablaşdırma məhsullarını hazırlamaq gücünə malikdir. Biz qısa müddət ərzində müştərilərimizn çox yüksək rəyinə nail olmağı bacarmışıq. Şirkət tələb olunan istehsalat prosesinin hər mərhələsinə qüsursuz və keyfiyyətlə yanaşır, imic və reputasyasını qoruyur</p>
-                        <a href="about.html" class="button">Haqqımızda</a>
+                        <a href="{{route('about_us')}}" class="button">Haqqımızda</a>
                     </div>
                     <div class="col-12 col-lg-6">
                         <img class="about-img-1" src="front/assets/images/about-2.jpg"/>

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Partner;
 use App\Models\Message;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -25,7 +27,14 @@ class HomeController extends Controller
     }
 
     public function product(){
-        return view('product');
+        $products = Product::all();
+        return view('product',compact('products'));
+    }
+
+    public function category($slug){
+        $category_data = Category::whereSlug($slug)->first();
+        $products      = Product::whereCategory($category_data->id)->get();
+        return view('product-single', compact('category_data','products'));
     }
 
     public function delivery(){

@@ -22,6 +22,7 @@
             <ul>
                 <li><a href="{{route('home')}}">Ana səhifə</a></li>
                 <li><i class="fas fa-slash"></i> Məhsullar</li>
+                <li><i class="fas fa-slash"></i> {{$category_data->category_name}}</li>
             </ul>
         </div>
     </section>
@@ -40,7 +41,7 @@
                         </label>
                         @foreach ($categories as $category)
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox"  {{$category->category_name == $category_data->category_name ? 'checked' : null}}>
                             <span class="checkbox"></span>
                             {{$category->category_name}}
                         </label>
@@ -48,8 +49,8 @@
                     </form>
                 </div>
                 <div class="col-lg-9">
-                    <h1 class="title">Bütün məhsullar h1</h1>
-                    <p>Bütün məhsullar top text</p>
+                    <h1 class="title">{{$category_data->top_h1}}</h1>
+                    <p>{{$category_data->top_text}}</p>
                     
                     <div class="products">
                         @foreach ($products as $product)
@@ -60,8 +61,8 @@
                         @endforeach
                     </div>
 
-                    <h2 class="title">Bütün məhsullar h2</h2>
-                    <p>Bütün məhsullar bottom text</p>
+                    <h2 class="title">{{$category_data->bottom_h2}}</h2>
+                    <p>{{$category_data->bottom_text}}</p>
                 </div>
             </div>
         </div>

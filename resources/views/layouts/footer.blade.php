@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-3">
-                    <a href="index.html" class="logo"><img src="front/assets/images/logo.svg"></a>
+                    <a href="index.html" class="logo"><img src="{{asset('front/assets/images/logo.svg')}}"></a>
                 </div>
                 <div class="col-sm-6 col-lg-2">
                     <ul class="footer-menu">
@@ -16,7 +16,7 @@
                 <div class="col-sm-6 col-lg-2">
                     <ul class="footer-menu">
                         @foreach ($categories as $category)
-                            <li><a href="{{\Illuminate\Support\Str::slug($category->category_name, '-')}}">{{$category->category_name}}</a></li>
+                            <li><a href="{{ route("category", $category->slug) }}">{{$category->category_name}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="copyright">
                 <p>© 2022 BakuPolygraphy.az. Müəllif hüquqları qorunur.</p>
-                <a href="https://jedai.az/az/saytlarin-hazirlanmasi" target="blank">Site By <img src="front/assets/images/jedai.png"></a>
+                <a href="https://jedai.az/az/saytlarin-hazirlanmasi" target="blank">Site By <img src="{{asset('front/assets/images/jedai.png')}}"></a>
             </div>
         </div>
     </footer>
@@ -52,6 +52,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous"></script>
-    <script src="front/assets/js/main.js"></script>
+    <script src="{{asset('front/assets/js/main.js')}}"></script>
 </body>
 </html>

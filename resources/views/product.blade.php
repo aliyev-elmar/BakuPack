@@ -51,20 +51,23 @@
                     </form>
                 </div>
                 <div class="col-lg-9">
-                    <h1 class="title" id="top_h1">Bütün məhsullar h1</h1>
-                    <p id="top_text">Bütün məhsullar top text</p>
+                    <h1 class="title" id="top_h1">Butun kateqoriyalarin h1i</h1>
+                    <p id="top_text">Butun kateqoriyalarin top texti</p>
                     
                     <div class="products">
+                        {{-- Data from ajax --}}
                         @foreach ($products as $product)
-                        <div class="card">
-                            {{-- <div class="card-img"><img src="{{asset('storage/'.$product->image)}}"/></div>
-                            <p class="card-title">{{$product->name}}</p> --}}
+                        <div class='card'>
+                            <div class='card-img'>
+                                <img src="{{asset('storage/'.$product->image)}}" />
+                            </div>
+                            <p class='card-title'>{{$product->name}}</p>
                         </div>
                         @endforeach
                     </div>
 
-                    <h2 class="title" id="bottom_h2">Bütün məhsullar h2</h2>
-                    <p id="bottom_text">Bütün məhsullar bottom text</p>
+                    <h2 class="title" id="bottom_h2">Butun kateqoriyalarin h2si</h2>
+                    <p id="bottom_text">Butun kateqoriyalarin bottom texti</p>
                 </div>
             </div>
         </div>
@@ -109,6 +112,20 @@ $('.categories').change(function() {
                 $('#top_text').text(category.top_text);
                 $('#bottom_h2').text(category.bottom_h2);
                 $('#bottom_text').text(category.bottom_text);
+                
+                // let products_html = [];
+                // products.forEach((product) => {
+                //     if(typeof product.name !== 'undefined'){
+                //         let product_html = `<div class='card'><div class='card-img'><img src="{{asset('storage/${product.image}')}}" /></div><p class='card-title'>${product.name}</p></div>`;
+                //         products_html.push(product_html);
+                //     }else{
+                //         $('.products').empty();
+                //     }
+                //     $('.products').empty();
+                //     $('.products').append(products_html);
+                    
+                // });
+                
             }
         });
     }

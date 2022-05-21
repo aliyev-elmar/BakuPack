@@ -18,23 +18,22 @@ class HomeController extends Controller
         return view('home',compact('carousel_items','partners'));
     }
 
+    public function product(){
+        $products = Product::all();
+        return view('product',compact('products'));
+    }
+
+    public function productSingle($slug){
+        $products = Product::all();
+        return view('product',compact('products'));
+    }
+
     public function about_us(){
         return view('about_us');
     }
 
     public function xammal(){
         return view('xammal');
-    }
-
-    public function product(){
-        $products = Product::all();
-        return view('product',compact('products'));
-    }
-
-    public function category($slug){
-        $category_data = Category::whereSlug($slug)->first();
-        $products      = Product::whereCategory($category_data->id)->get();
-        return view('product-single', compact('category_data','products'));
     }
 
     public function delivery(){
@@ -73,5 +72,42 @@ class HomeController extends Controller
           } catch (\Exception $e) {
             return $e->getMessage();
           }
+    }
+
+    public function productPost(Request $request){
+        $categories = json_decode(json_encode($request->categories), true);
+        if($categories[0] == "all-data"){
+            //Butun kateqoriyalari secerse
+            $category = (object) [
+                'top_h1'     => 'Butun kateqoriyalarin h1i',
+                'top_text'   => 'Butun kateqoriyalarin top texti',
+                'bottom_h2'  => 'Butun kateqoriyalarin h2si',
+                'bottom_text'=> 'Butun kateqoriyalarin bottom texti',
+            ];
+            $products = Product::all();
+        }
+        elseif(count($categories) > 1){
+            //Iki kateqoriyani eyni zamanda secerse
+            $category = (object) [
+                'top_h1'     => 'Butun kateqoriyalarin h1i',
+                'top_text'   => 'Butun kateqoriyalarin top texti',
+                'bottom_h2'  => 'Butun kateqoriyalarin h2si',
+                'bottom_text'=> 'Butun kateqoriyalarin bottom texti',
+            ];
+            $products = [];
+            foreach($categories as $category_id){
+                $product = Product::whereCategory($category_id)->get();
+                array_push($products, $product);
+            }  
+        }else{
+            //Sadece tek bir kateqoriyani secerse
+            foreach($categories as $category_id){
+                $category = Category::find($category_id);
+                $products = Product::whereCategory($category_id)->get();
+            }  
+        }
+
+        $data = ['category' => $category, 'products' => $products];
+        return $data;
     }
 }

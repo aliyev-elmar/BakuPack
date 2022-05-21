@@ -12,7 +12,8 @@ Route::get('/istehsal-prosesi', [HomeController::class, 'production'])->name('pr
 Route::get('/qalereya',         [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/elaqe',            [HomeController::class, 'contact'])->name('contact');
 Route::post('/elaqe',           [HomeController::class, 'contactPost'])->name('contact-post');
-Route::get('/mehsullar/{slug}', [HomeController::class, 'category'])->name('category');
+Route::post('/mehsullar',       [HomeController::class, 'productPost'])->name('product-post');
+Route::get('/mehsullar/{slug}', [HomeController::class, 'productSingle'])->name('product-single');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

@@ -21,7 +21,8 @@
         <div class="container">
             <ul>
                 <li><a href="{{route('home')}}">Ana səhifə</a></li>
-                <li><i class="fas fa-slash"></i> Məhsullar</li>
+                <li><i class="fas fa-slash"></i> Məhsullar <i class="fas fa-slash"></i> </li>
+                <li class="cat_name"></li>
             </ul>
         </div>
     </section>
@@ -31,39 +32,87 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <form class="category-name">
+                    <form class="category-name" method="POST">
+                        @csrf
                         <h5>Kateqoriyalar</h5>
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox"  class="categories" name="categories[]" value="all-data">
                             <span class="checkbox"></span>
                             Bütün məhsullar
                         </label>
                         @foreach ($categories as $category)
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" class="categories" name="categories[]" value="{{$category->id}}">
                             <span class="checkbox"></span>
                             {{$category->category_name}}
+                           
                         </label>
                         @endforeach
                     </form>
                 </div>
                 <div class="col-lg-9">
-                    <h1 class="title">Bütün məhsullar h1</h1>
-                    <p>Bütün məhsullar top text</p>
+                    <h1 class="title" id="top_h1">Bütün məhsullar h1</h1>
+                    <p id="top_text">Bütün məhsullar top text</p>
                     
                     <div class="products">
                         @foreach ($products as $product)
                         <div class="card">
-                            <div class="card-img"><img src="{{asset('storage/'.$product->image)}}"/></div>
-                            <p class="card-title">{{$product->name}}</p>
+                            {{-- <div class="card-img"><img src="{{asset('storage/'.$product->image)}}"/></div>
+                            <p class="card-title">{{$product->name}}</p> --}}
                         </div>
                         @endforeach
                     </div>
 
-                    <h2 class="title">Bütün məhsullar h2</h2>
-                    <p>Bütün məhsullar bottom text</p>
+                    <h2 class="title" id="bottom_h2">Bütün məhsullar h2</h2>
+                    <p id="bottom_text">Bütün məhsullar bottom text</p>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+
+@push('js')
+
+<script>
+$('.categories').change(function() {
+
+    if( $('.categories:checked').length){
+    var categories = [];
+    $('.categories:checked').each(function(i,v) {
+        categories.push($(v).val());
+    });
+        $.ajax({
+            url         :   '{{ route('product-post') }}',
+            type        :   'POST',
+            dataType    :   'json',
+            data        :   { categories  :  categories, 
+                _token :'{{ csrf_token() }}'
+            },
+            success     :   function ( data ) {
+                let category = data.category;
+                let products = data.products;
+                let nextURL = "{{route('product')}}";
+
+                if (typeof category.category_name !== 'undefined') {
+                    nextURL   = "{{route('product')}}/"+category.slug;
+                    $('.cat_name').text(category.category_name);
+                }else{
+                    $('.cat_name').text('Qarışıq');
+                }  
+
+                const nextTitle = category.category_name;
+                const nextState = { additionalInformation: 'Updated the URL with JS' };
+                window.history.pushState(nextState, nextTitle, nextURL);
+                window.history.replaceState(nextState, nextTitle, nextURL);
+                
+                $('#top_h1').text(category.top_h1);
+                $('#top_text').text(category.top_text);
+                $('#bottom_h2').text(category.bottom_h2);
+                $('#bottom_text').text(category.bottom_text);
+            }
+        });
+    }
+});
+    
+</script>
+@endpush

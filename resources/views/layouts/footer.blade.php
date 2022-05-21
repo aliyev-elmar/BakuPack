@@ -13,13 +13,13 @@
                         <li><a href="{{route('contact')}}">Əlaqə</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-6 col-lg-2">
+                {{-- <div class="col-sm-6 col-lg-2">
                     <ul class="footer-menu">
                         @foreach ($categories as $category)
                             <li><a href="{{ route("category", $category->slug) }}">{{$category->category_name}}</a></li>
                         @endforeach
                     </ul>
-                </div>
+                </div> --}}
                 <div class="col-sm-6 col-lg-3">
                    <p>{{$contact->location}}</p>
                    <a href="mailto: info@bakupolygraphy.az" class="footer-mail">{{$contact->email}}</a>
@@ -41,8 +41,6 @@
     </footer>
 
 
-
-
     <!-- <div class="whatsapp"><a href="https://wa.me/" target="blank"><i class="fab fa-whatsapp"></i></a></div>
     <div class="phone-btn"><a href="tel:"><i class="fas fa-phone-alt"></i></a></div>
     <div class="back-to-top"><i class="fas fa-chevron-up"></i></div> -->
@@ -53,5 +51,6 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous"></script>
     <script src="{{asset('front/assets/js/main.js')}}"></script>
+    @stack('js')
 </body>
 </html>

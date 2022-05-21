@@ -35,9 +35,9 @@
                         <li class="dropdown"><a href="{{route('product')}}">Məhsullar</a> <i class="fas fa-angle-down"></i>
                             <ul class="submenu">
                                 <li><a href="{{route('product')}}">Bütün məhsullar</a></li>
-                                @foreach ($categories as $category)
+                                {{-- @foreach ($categories as $category)
                                     <li><a href="{{ route("category", $category->slug) }}">{{$category->category_name}}</a></li>
-                                @endforeach
+                                @endforeach --}}
                             </ul>
                         </li>
                         <li><a href="{{route('delivery')}}">Çatdırılma</a></li>

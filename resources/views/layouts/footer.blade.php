@@ -13,13 +13,13 @@
                         <li><a href="{{route('contact')}}">Əlaqə</a></li>
                     </ul>
                 </div>
-                {{-- <div class="col-sm-6 col-lg-2">
+                <div class="col-sm-6 col-lg-2">
                     <ul class="footer-menu">
                         @foreach ($categories as $category)
-                            <li><a href="{{ route("category", $category->slug) }}">{{$category->category_name}}</a></li>
+                            <li><a href="{{ route("product-single", $category->slug) }}">{{$category->category_name}}</a></li>
                         @endforeach
                     </ul>
-                </div> --}}
+                </div>
                 <div class="col-sm-6 col-lg-3">
                    <p>{{$contact->location}}</p>
                    <a href="mailto: info@bakupolygraphy.az" class="footer-mail">{{$contact->email}}</a>

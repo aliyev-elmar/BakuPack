@@ -96,7 +96,7 @@ $('.categories').change(function() {
                 let products = data.products;
                 let nextURL = "{{route('product')}}";
 
-                if (typeof category.category_name !== 'undefined') {
+                if (typeof category.slug !== 'undefined') {
                     nextURL   = "{{route('product')}}/"+category.slug;
                     $('.cat_name').text(category.category_name);
                 }else{
@@ -112,20 +112,33 @@ $('.categories').change(function() {
                 $('#top_text').text(category.top_text);
                 $('#bottom_h2').text(category.bottom_h2);
                 $('#bottom_text').text(category.bottom_text);
-                
-                // let products_html = [];
-                // products.forEach((product) => {
-                //     if(typeof product.name !== 'undefined'){
-                //         let product_html = `<div class='card'><div class='card-img'><img src="{{asset('storage/${product.image}')}}" /></div><p class='card-title'>${product.name}</p></div>`;
-                //         products_html.push(product_html);
-                //     }else{
-                //         $('.products').empty();
-                //     }
-                //     $('.products').empty();
-                //     $('.products').append(products_html);
-                    
-                // });
-                
+
+                let products_html = new Array();
+                if(products.length > 0){
+                    products.forEach((product) => {
+                        if(Array.isArray(product)){
+                            product.forEach((p) => {
+                                let product_html = `<div class='card'><div class='card-img'><img src="{{asset('storage/${p.image}')}}" /></div><p class='card-title'>${p.name}</p></div>`;
+                                products_html.push(product_html);
+                                $('.products').empty();
+                            })
+                            if ($('.products').is(':empty')){
+                                $('.products').append(products_html);
+                            }
+                        }else{
+                            if(product.name){
+                                let product_html = `<div class='card'><div class='card-img'><img src="{{asset('storage/${product.image}')}}" /></div><p class='card-title'>${product.name}</p></div>`;
+                                products_html.push(product_html);
+                                $('.products').empty();
+                            }
+                            $('.products').append(products_html);
+                        }
+                    })
+                }
+                else{
+                    $('.products').empty();
+                    $('.products').text('Məhsul yoxdur');
+                }
             }
         });
     }

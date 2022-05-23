@@ -30,20 +30,20 @@
             <div class="header-menu">
                 <nav>
                     <ul class="menu">
-                        <li><a href="{{route('about_us')}}">Haqqımızda</a></li>
-                        <li><a href="{{route('xammal')}}">Xammal</a></li>
-                        <li class="dropdown"><a href="{{route('product')}}">Məhsullar</a> <i class="fas fa-angle-down"></i>
+                        <li><a href="{{route('about_us')}}">{{__('lang.Haqqımızda')}}</a></li>
+                        <li><a href="{{route('xammal')}}">{{__('lang.Xammal')}}</a></li>
+                        <li class="dropdown"><a href="{{route('product')}}">{{__('lang.Məhsullar')}}</a> <i class="fas fa-angle-down"></i>
                             <ul class="submenu">
-                                <li><a href="{{route('product')}}">Bütün məhsullar</a></li>
+                                <li><a href="{{route('product')}}">{{__('lang.Bütün məhsullar')}}</a></li>
                                 @foreach ($categories as $category)
-                                    <li><a href="{{ route("product-single", $category->slug) }}">{{$category->category_name}}</a></li>
+                                    <li><a href="{{ route("product-single", $category->slug) }}">{{$category->getTranslatedAttribute('category_name', App::getLocale(), 'az')}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{route('delivery')}}">Çatdırılma</a></li>
-                        <li><a href="{{route('production')}}">İstehsal prosesi</a></li>
-                        <li><a href="{{route('gallery')}}">Qalereya</a></li>
-                        <li><a href="{{route('contact')}}">Əlaqə</a></li>
+                        <li><a href="{{route('delivery')}}">{{__('lang.Çatdırılma')}}</a></li>
+                        <li><a href="{{route('production')}}">{{__('lang.İstehsal prosesi')}}</a></li>
+                        <li><a href="{{route('gallery')}}">{{__('lang.Qalereya')}}</a></li>
+                        <li><a href="{{route('contact')}}">{{__('lang.Əlaqə')}}</a></li>
                     </ul>
                 </nav>
                 <div class="lang">

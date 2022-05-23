@@ -19,13 +19,13 @@ class HomeController extends Controller
     }
 
     public function product(){
-        $products = Product::all();
+        $products = Product::withTranslations()->get();
         return view('product',compact('products'));
     }
 
     public function productSingle($slug){
-        $category_data = Category::whereSlug($slug)->first();
-        $products      = Product::whereCategory($category_data->id)->get();
+        $category_data = Category::withTranslations()->whereSlug($slug)->first();
+        $products      = Product::withTranslations()->whereCategory($category_data->id)->get();
         return view('product',compact('products','category_data'));
     }
 
@@ -97,14 +97,14 @@ class HomeController extends Controller
             ];
             $products = [];
             foreach($categories as $category_id){
-                $product = Product::whereCategory($category_id)->get();
+                $product = Product::withTranslations()->whereCategory($category_id)->get();
                 array_push($products, $product);
             }  
         }else{
             //Sadece tek bir kateqoriyani secerse
             foreach($categories as $category_id){
-                $category = Category::find($category_id);
-                $products = Product::whereCategory($category_id)->get();
+                $category = Category::withTranslations()->find($category_id);
+                $products = Product::withTranslations()->whereCategory($category_id)->get();
             }  
         }
 

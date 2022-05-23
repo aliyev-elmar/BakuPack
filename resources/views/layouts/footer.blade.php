@@ -7,21 +7,21 @@
                 </div>
                 <div class="col-sm-6 col-lg-2">
                     <ul class="footer-menu">
-                        <li><a href="{{route('about_us')}}">Haqqımızda</a></li>
+                        <li><a href="{{route('about_us')}}">{{__('lang.Haqqımızda')}}</a></li>
                         {{-- <li><a href="">Xidmət</a></li> --}}
-                        <li><a href="{{route('delivery')}}">Çatdırılma</a></li>
-                        <li><a href="{{route('contact')}}">Əlaqə</a></li>
+                        <li><a href="{{route('delivery')}}">{{__('lang.Çatdırılma')}}</a></li>
+                        <li><a href="{{route('contact')}}">{{__('lang.Əlaqə')}}</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-2">
                     <ul class="footer-menu">
                         @foreach ($categories as $category)
-                            <li><a href="{{ route("product-single", $category->slug) }}">{{$category->category_name}}</a></li>
+                            <li><a href="{{ route("product-single", $category->slug) }}">{{$category->getTranslatedAttribute('category_name', App::getLocale(), 'az')}}</a></li>
                         @endforeach
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                   <p>{{$contact->location}}</p>
+                   <p>{{$contact->getTranslatedAttribute('location', App::getLocale(), 'az')}}</p>
                    <a href="mailto: info@bakupolygraphy.az" class="footer-mail">{{$contact->email}}</a>
                    <a href="tel:{{$contact->wp_number}}" class="footer-phone">{{$contact->wp_number}}</a>
                    <a href="tel:{{$contact->phone}}" class="footer-phone">{{$contact->phone}}</a>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2022 BakuPolygraphy.az. Müəllif hüquqları qorunur.</p>
+                <p>© 2022 BakuPolygraphy.az. {{__('lang.Müəllif hüquqları qorunur')}}</p>
                 <a href="https://jedai.az/az/saytlarin-hazirlanmasi" target="blank">Site By <img src="{{asset('front/assets/images/jedai.png')}}"></a>
             </div>
         </div>

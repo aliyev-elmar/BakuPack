@@ -20,8 +20,8 @@
     <section id="breadcrumb" class="main-section">
         <div class="container">
             <ul>
-                <li><a href="{{route('home')}}">Ana səhifə</a></li>
-                <li><i class="fas fa-slash"></i> Məhsullar <i class="fas fa-slash"></i> </li>
+                <li><a href="{{route('home')}}">{{__('lang.Ana səhifə')}}</a></li>
+                <li><i class="fas fa-slash"></i> {{__('lang.Məhsullar')}} <i class="fas fa-slash"></i> </li>
                 <li class="cat_name">@if(@isset($category_data)) {{$category_data->category_name}} @endif</li>
             </ul>
         </div>
@@ -34,11 +34,11 @@
                 <div class="col-lg-3">
                     <form class="category-name" method="POST">
                         @csrf
-                        <h5>Kateqoriyalar</h5>
+                        <h5>{{__('lang.Kateqoriyalar')}}</h5>
                         <label>
                             <input type="checkbox"  class="categories" name="categories[]" value="all-data">
                             <span class="checkbox"></span>
-                            Bütün məhsullar
+                            {{__('lang.Bütün məhsullar')}}
                         </label>
                         @foreach ($categories as $category)
                         <label>

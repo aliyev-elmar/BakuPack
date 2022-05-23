@@ -12,8 +12,8 @@
                                 <img src="{{ Voyager::image($carousel_item->image) }}"/>
                             </div>
                             <div class="slide-content">
-                                <p class="home-title">{{$carousel_item->title}}</p> <!-- <span class="home-yellow"></span> -->
-                                <p class="home-subtitle">{{$carousel_item->description}}</p>
+                                <p class="home-title">{{$carousel_item->getTranslatedAttribute('title', App::getLocale(), 'az')}}</p> <!-- <span class="home-yellow"></span> -->
+                                <p class="home-subtitle">{{$carousel_item->getTranslatedAttribute('description', App::getLocale(), 'az')}}</p>
                                 <div class="home-button"><a href="{{route('product')}}">Hamısı</a></div>
                             </div>
                         </div>
@@ -52,8 +52,8 @@
                     <div class="col-12 col-lg-6">
                         <span class="point"></span>
                         <h2 class="title">Baku Polygraphy</h2>
-                        <p>BakuPolygraphy 50 nəfərə yaxın heyətdən ibarət olan və yeni avadlıqlarla təmin olunan şirkətdir və bütün növ karton qutu və qablaşdırma məhsullarını hazırlamaq gücünə malikdir. Biz qısa müddət ərzində müştərilərimizn çox yüksək rəyinə nail olmağı bacarmışıq. Şirkət tələb olunan istehsalat prosesinin hər mərhələsinə qüsursuz və keyfiyyətlə yanaşır, imic və reputasyasını qoruyur</p>
-                        <a href="{{route('about_us')}}" class="button">Haqqımızda</a>
+                        <p>{{__('lang.BakuPolygraphy 50 nəfərə yaxın heyətdən ibarət olan və yeni avadlıqlarla təmin olunan şirkətdir və bütün növ karton qutu və qablaşdırma məhsullarını hazırlamaq gücünə malikdir. Biz qısa müddət ərzində müştərilərimizn çox yüksək rəyinə nail olmağı bacarmışıq. Şirkət tələb olunan istehsalat prosesinin hər mərhələsinə qüsursuz və keyfiyyətlə yanaşır, imic və reputasyasını qoruyur')}}</p>
+                        <a href="{{route('about_us')}}" class="button">{{__('lang.Haqqımızda')}}</a>
                     </div>
                     <div class="col-12 col-lg-6">
                         <img class="about-img-1" src="front/assets/images/about-2.jpg"/>
@@ -104,15 +104,15 @@
             <div class="bg"></div>
             <div class="bg-2"></div>
             <div class="container">
-                <h2 class="title">Qablaşdırma</h2>
+                <h2 class="title">{{__('lang.Qablaşdırma')}}</h2>
                 <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta deserunt consequuntur obcaecati id illo fuga unde dolore, dolorum magnam voluptate! Dignissimos accusantium explicabo recusandae corporis in dolorum placeat quia iste.</p>
                 <div class="row">
                     @foreach ($categories as $category)
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="card category-card">
-                            <div class="card-title"><h3>{{$category->category_name}}</h3></div>
+                            <div class="card-title"><h3>{{$category->getTranslatedAttribute('category_name', App::getLocale(), 'az')}}</h3></div>
                             <div class="card-img"><img src="{{ Voyager::image($category->image) }}"/></div>
-                            <div class="card-subtitle"><p>{{$category->category_text}}</p></div>
+                            <div class="card-subtitle"><p>{{$category->getTranslatedAttribute('category_text', App::getLocale(), 'az')}}</p></div>
                         </div>
                     </div>
                     @endforeach
@@ -127,7 +127,7 @@
                         <img src="front/assets/images/2.jpg" class="form-img-1"/>
                     </div>
                     <div class="col-lg-5">
-                        <h2 class="title">Bizimlə əlaqə saxlayın</h2>
+                        <h2 class="title">{{__('lang.Bizimlə əlaqə saxlayın')}}</h2>
                         <form class="row" action="{{route('contact-post')}}" method="post">
                             @csrf
                             <div class="col-12">
@@ -148,7 +148,7 @@
                                 <input class="form-control" type="text" placeholder="Şirkət" name="company" value="{{old('company')}}">
                             </div>
                             <div class="col-12">
-                                <button class="button" type="submit">Göndər</button>
+                                <button class="button" type="submit">{{__('lang.Göndər')}}</button>
                             </div>
                         </form>
                     </div>

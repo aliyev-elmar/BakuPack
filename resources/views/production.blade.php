@@ -4,8 +4,8 @@
     <section id="breadcrumb">
         <div class="container">
             <ul>
-                <li><a href="{{route('home')}}">Ana səhifə</a></li>
-                <li><i class="fas fa-slash"></i> İstehsal prosesi</li>
+                <li><a href="{{route('home')}}">{{__('lang.Ana səhifə')}}</a></li>
+                <li><i class="fas fa-slash"></i> {{__('lang.İstehsal prosesi')}}</li>
             </ul>
         </div>
     </section>
@@ -15,7 +15,7 @@
         <div class="container">
 
             <div class="title-div">
-                <h2 class="title">İstehsal prosesi</h2>
+                <h2 class="title">{{__('lang.İstehsal prosesi')}}</h2>
             </div>
            
             <div class="row">

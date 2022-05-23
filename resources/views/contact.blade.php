@@ -4,8 +4,8 @@
     <section id="breadcrumb">
         <div class="container">
             <ul>
-                <li><a href="{{route('home')}}">Ana səhifə</a></li>
-                <li><i class="fas fa-slash"></i> Əlaqə</li>
+                <li><a href="{{route('home')}}">{{__('lang.Ana səhifə')}}</a></li>
+                <li><i class="fas fa-slash"></i> {{__('lang.Əlaqə')}}</li>
             </ul>
         </div>
     </section>
@@ -21,7 +21,7 @@
                     <div class="contact-info">
                         <div>
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>{{$contact->location}}</p>
+                            <p>{{$contact->getTranslatedAttribute('location', App::getLocale(), 'az')}}</p>
                         </div>
                         
                         <a href="mailto:info@bakupack.az"><i class="fas fa-envelope"></i>{{$contact->email}}</a>
@@ -43,7 +43,7 @@
                     <form class="row" action="{{route('contact-post')}}" method="post">
                         @csrf
                         <div class="col-12">
-                        <h2 class="title">Bizimlə əlaqə saxlayın</h2>
+                        <h2 class="title">{{__('lang.Bizimlə əlaqə saxlayın')}}</h2>
                             @if(Session::has('success'))
                                 <div class="alert alert-success">{{ Session::get('success')}}</div>
                             @endif
@@ -61,7 +61,7 @@
                             <input class="form-control" type="text" placeholder="Şirkət" name="company" value="{{old('company')}}">
                         </div>
                         <div class="col-12">
-                            <button class="button" type="submit">Göndər</button>
+                            <button class="button" type="submit">{{__('lang.Göndər')}}</button>
                         </div>
                     </form>
                 </div>

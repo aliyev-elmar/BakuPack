@@ -19,8 +19,8 @@
     <section id="breadcrumb" class="main-section">
         <div class="container">
             <ul>
-                <li><a href="{{route('home')}}">Ana səhifə</a></li>
-                <li><i class="fas fa-slash"></i> Çatdırılma</li>
+                <li><a href="{{route('home')}}">{{__('lang.Ana səhifə')}}</a></li>
+                <li><i class="fas fa-slash"></i> {{__('lang.Çatdırılma')}}</li>
             </ul>
         </div>
     </section>
@@ -34,8 +34,8 @@
                     <img src="front/assets/images/a-4.jpg">
                 </div>
                 <div class="col-12 col-lg-7">
-                    <p class="delivery-title">Çatdırılma</p>
-                    <p class="delivery-subtitle">Qayğıkeş və diqqətli kadrlarımızla məhsulunuzun yerinə çatdırılmasını öz üzərimizə götürürük. İxtisaslaşmış kadrlar müştəri məmnuniyyətini hər zaman ön planda saxlayır.</p>
+                    <p class="delivery-title">{{__('lang.Çatdırılma')}}</p>
+                    <p class="delivery-subtitle">{{__('lang.Qayğıkeş və diqqətli kadrlarımızla məhsulunuzun yerinə çatdırılmasını öz üzərimizə götürürük. İxtisaslaşmış kadrlar müştəri məmnuniyyətini hər zaman ön planda saxlayır')}}</p>
                 </div>
                 
             </div>

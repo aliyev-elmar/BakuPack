@@ -10,5 +10,5 @@ class Category extends Model
 {
     use HasFactory;
     use Translatable;
-    protected $translatable = ['category_name','category_text', 'meta_title','meta_description', 'meta_keywords' ,'h1_top','text_top','h2_bottom','text_bottom'];
+    protected $translatable = ['category_name', 'category_text', 'meta_title','meta_description', 'meta_keywords' ,'top_h1','top_text','bottom_h2','bottom_text'];
 }

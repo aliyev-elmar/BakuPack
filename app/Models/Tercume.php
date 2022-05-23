@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Translatable;
 
-class ContactInfo extends Model
+
+class Tercume extends Model
 {
-    use HasFactory;
     use Translatable;
-    protected $translatable = ['location'];
+    protected $translatable = ['text'];
 }

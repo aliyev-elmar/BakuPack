@@ -10,5 +10,5 @@ class Product extends Model
 {
     use HasFactory;
     use Translatable;
-    protected $translatable = ['name','img_alt'];
+    protected $translatable = ['name'];
 }

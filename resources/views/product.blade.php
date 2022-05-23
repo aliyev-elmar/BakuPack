@@ -22,7 +22,7 @@
             <ul>
                 <li><a href="{{route('home')}}">Ana səhifə</a></li>
                 <li><i class="fas fa-slash"></i> Məhsullar <i class="fas fa-slash"></i> </li>
-                <li class="cat_name"></li>
+                <li class="cat_name">@if(@isset($category_data)) {{$category_data->category_name}} @endif</li>
             </ul>
         </div>
     </section>
@@ -42,7 +42,7 @@
                         </label>
                         @foreach ($categories as $category)
                         <label>
-                            <input type="checkbox" class="categories" name="categories[]" value="{{$category->id}}">
+                            <input type="checkbox" class="categories" name="categories[]" value="{{$category->id}}" @if(@isset($category_data) && ($category_data->category_name == $category->category_name) ) checked @endif>
                             <span class="checkbox"></span>
                             {{$category->category_name}}
                            

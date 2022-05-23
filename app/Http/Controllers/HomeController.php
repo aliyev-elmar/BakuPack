@@ -25,9 +25,8 @@ class HomeController extends Controller
 
     public function productSingle($slug){
         $category_data = Category::whereSlug($slug)->first();
-        $category_id   = $category_data->id;
-        $products      = Product::whereCategory($category_id)->get();
-        return view('product',compact('products'));
+        $products      = Product::whereCategory($category_data->id)->get();
+        return view('product',compact('products','category_data'));
     }
 
     public function about_us(){

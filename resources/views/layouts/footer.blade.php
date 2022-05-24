@@ -7,8 +7,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-2">
                     <ul class="footer-menu">
-                        <li><a href="{{route('about_us')}}">{{__('lang.Haqqımızda')}}</a></li>
-                        {{-- <li><a href="">Xidmət</a></li> --}}
+                        <li><a href="{{route('about_us')}}">{{__('lang.Haqqimizda')}}</a></li>
                         <li><a href="{{route('delivery')}}">{{__('lang.Çatdırılma')}}</a></li>
                         <li><a href="{{route('contact')}}">{{__('lang.Əlaqə')}}</a></li>
                     </ul>
@@ -34,7 +33,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2022 BakuPolygraphy.az. {{__('lang.Müəllif hüquqları qorunur')}}</p>
+                <p>© 2022 BakuPolygraphy.az. {{__('lang.Müəllif')}}</p>
                 <a href="https://jedai.az/az/saytlarin-hazirlanmasi" target="blank">Site By <img src="{{asset('front/assets/images/jedai.png')}}"></a>
             </div>
         </div>

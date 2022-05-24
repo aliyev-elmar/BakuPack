@@ -14,7 +14,7 @@
                             <div class="slide-content">
                                 <p class="home-title">{{$carousel_item->getTranslatedAttribute('title', App::getLocale(), 'az')}}</p> <!-- <span class="home-yellow"></span> -->
                                 <p class="home-subtitle">{{$carousel_item->getTranslatedAttribute('description', App::getLocale(), 'az')}}</p>
-                                <div class="home-button"><a href="{{route('product')}}">Hamısı</a></div>
+                                <div class="home-button"><a href="{{route('product')}}">{{__('lang.Hamısı')}}</a></div>
                             </div>
                         </div>
                     @endforeach
@@ -52,8 +52,8 @@
                     <div class="col-12 col-lg-6">
                         <span class="point"></span>
                         <h2 class="title">Baku Polygraphy</h2>
-                        <p>{{__('lang.BakuPolygraphy 50 nəfərə yaxın heyətdən ibarət olan və yeni avadlıqlarla təmin olunan şirkətdir və bütün növ karton qutu və qablaşdırma məhsullarını hazırlamaq gücünə malikdir. Biz qısa müddət ərzində müştərilərimizn çox yüksək rəyinə nail olmağı bacarmışıq. Şirkət tələb olunan istehsalat prosesinin hər mərhələsinə qüsursuz və keyfiyyətlə yanaşır, imic və reputasyasını qoruyur')}}</p>
-                        <a href="{{route('about_us')}}" class="button">{{__('lang.Haqqımızda')}}</a>
+                        <p>{{__('lang.Haqqimizda_text')}}</p>
+                        <a href="{{route('about_us')}}" class="button">{{__('lang.Haqqimizda')}}</a>
                     </div>
                     <div class="col-12 col-lg-6">
                         <img class="about-img-1" src="front/assets/images/about-2.jpg"/>
@@ -66,15 +66,15 @@
         <!-- Benefit -->
         <section id="benefit">
             <div class="container">
-                <h2 class="title">Niyə bizi seçməlisiniz?</h2>
-                <p class="subtitle">3 addımda</p>
+                <h2 class="title">{{__('lang.Niyə_seçməlisiniz')}}</h2>
+                <p class="subtitle">{{__('lang.uch_addimda')}}</p>
                 <div class="row">
                     <div class="col-12 col-lg-4">
                         <div class="card card-1">
                             <div class="card-icon"><img src="front/assets/images/b-1.svg"/></div>
                             <div class="card-text">
-                                <p class="card-title">Peşəkar dizaynlar</p>
-                                <p class="card-subtitle">Müştərilərimizin istəyinə və zövqünə uyğun dizaynları hazırlamaqla birlikdə öz təkliflərimizi də təqdim edirik.</p>
+                                <p class="card-title">{{__('lang.Peşəkar_dizaynlar')}}</p>
+                                <p class="card-subtitle">{{__('lang.Haqqimizda_peshakar_text')}}</p>
                             </div>
                         </div>
                     </div>
@@ -82,8 +82,8 @@
                         <div class="card card-2">
                             <div class="card-icon"><img src="front/assets/images/b-2.svg"/></div>
                             <div class="card-text">
-                                <p class="card-title">Böyük həcmli sifarişlər</p>
-                                <p class="card-subtitle">Böyük həcimli sifarişlərin qısa müddətdə istehsalına zəmanət veririk. Keyfiyyət və sürət təsadüfün nəticəs deyil!</p>
+                                <p class="card-title">{{__('lang.Peşəkar_dizaynlar')}}</p>
+                                <p class="card-subtitle">{{__('lang.Böyük_həcmli')}}</p>
                             </div>
                         </div>
                     </div>
@@ -91,8 +91,8 @@
                         <div class="card card-3">
                             <div class="card-icon"><img src="front/assets/images/b-3.svg"/></div>
                             <div class="card-text">
-                                <p class="card-title">Çatdırılma</p>
-                                <p class="card-subtitle">Qayğıkeş və diqqətli kadrlarımızla məhsulunuzun yerinə çatdırılmasını öz üzərimizə götürürük. Müştəri məmnuniyyəti həmişə ön planda! </p>
+                                <p class="card-title">{{__('lang.Çatdırılma')}}</p>
+                                <p class="card-subtitle">{{__('lang.Çatdırılma_text')}}</p>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         <img src="front/assets/images/2.jpg" class="form-img-1"/>
                     </div>
                     <div class="col-lg-5">
-                        <h2 class="title">{{__('lang.Bizimlə əlaqə saxlayın')}}</h2>
+                        <h2 class="title">{{__('lang.Bizimlə_əlaqə')}}</h2>
                         <form class="row" action="{{route('contact-post')}}" method="post">
                             @csrf
                             <div class="col-12">

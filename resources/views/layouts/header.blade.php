@@ -30,28 +30,28 @@
             <div class="header-menu">
                 <nav>
                     <ul class="menu">
-                        <li><a href="{{route('about_us')}}">{{__('lang.Haqqımızda')}}</a></li>
+                        <li><a href="{{route('about_us')}}">{{__('lang.Haqqimizda')}}</a></li>
                         <li><a href="{{route('xammal')}}">{{__('lang.Xammal')}}</a></li>
                         <li class="dropdown"><a href="{{route('product')}}">{{__('lang.Məhsullar')}}</a> <i class="fas fa-angle-down"></i>
                             <ul class="submenu">
-                                <li><a href="{{route('product')}}">{{__('lang.Bütün məhsullar')}}</a></li>
+                                <li><a href="{{route('product')}}">{{__('lang.Bütün_məhsullar')}}</a></li>
                                 @foreach ($categories as $category)
                                     <li><a href="{{ route("product-single", $category->slug) }}">{{$category->getTranslatedAttribute('category_name', App::getLocale(), 'az')}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
                         <li><a href="{{route('delivery')}}">{{__('lang.Çatdırılma')}}</a></li>
-                        <li><a href="{{route('production')}}">{{__('lang.İstehsal prosesi')}}</a></li>
+                        <li><a href="{{route('production')}}">{{__('lang.İstehsal_prosesi')}}</a></li>
                         <li><a href="{{route('gallery')}}">{{__('lang.Qalereya')}}</a></li>
                         <li><a href="{{route('contact')}}">{{__('lang.Əlaqə')}}</a></li>
                     </ul>
                 </nav>
                 <div class="lang">
-                    <span>AZ <i class="fas fa-angle-down"></i></span>
+                    <span>{{App::getLocale()}} <i class="fas fa-angle-down"></i></span>
                     <ul>
-                        <li><a href="">AZ</a></li>
-                        <li><a href="">EN</a></li>
-                        <li><a href="">RU</a></li>
+                        <li><a href="{{ URL::toRoute($current = Route::current(),['language'=>'az'] + $current->parameters(),true) }}">AZ</a></li>
+                        <li><a href="{{ URL::toRoute($current = Route::current(),['language'=>'en'] + $current->parameters(),true) }}">EN</a></li>
+                        <li><a href="{{ URL::toRoute($current = Route::current(),['language'=>'ru'] + $current->parameters(),true) }}">RU</a></li>
                     </ul>
                 </div>
             </div>

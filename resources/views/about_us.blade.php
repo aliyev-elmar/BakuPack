@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h2 class="title"><span>Baku</span> Pack</h2>
-                    <p>{{__('lang.BakuPolygraphy 50 nəfərə yaxın heyətdən ibarət olan və yeni avadlıqlarla təmin olunan şirkətdir və bütün növ karton qutu və qablaşdırma məhsullarını hazırlamaq gücünə malikdir. Biz qısa müddət ərzində müştərilərimizn çox yüksək rəyinə nail olmağı bacarmışıq. Şirkət tələb olunan istehsalat prosesinin hər mərhələsinə qüsursuz və keyfiyyətlə yanaşır, imic və reputasyasını qoruyur')}}</p>
+                    <p>{{__('lang.Haqqimizda_text')}}</p>
                 </div>
             </div>
             
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-12 col-lg-7">
                     <p class="about-title">{{__('lang.Xammal')}}</p>
-                    <p class="about-subtitle">{{__('lang.Dünyanın ən qabaqcıl istehsalçılarından (Çin, Rusiya, Türkiyə və s.) birbaşa xammal idxal edirik. Xammalın birbaşa sifarişi rəqabətdə üstünlüyümüzü təmin edir')}}</p>
+                    <p class="about-subtitle">{{__('lang.Xammal_text')}}</p>
                 </div>
                 <div class="col-12 col-lg-5">
                     <img src="front/assets/images/a-5.png">
@@ -45,12 +45,12 @@
                 <div class="col-12 col-lg-7">
                     <span class="point"></span>
                     <span class="point-2"></span>
-                    <p class="about-title">{{__('lang.PEŞƏKAR DİZAYN İŞLƏRİ')}}</p>
-                    <p class="about-subtitle">{{__('lang.Müştərilərilərimizin istəyinə və zövqünə uyğun dizaynları hazırlamaqla birlikdə öz təkliflərimizi də təqdim edirik')}}</p>
+                    <p class="about-title">{{__('lang.Haqqimizda_peshakar')}}</p>
+                    <p class="about-subtitle">{{__('lang.Haqqimizda_peshakar_text')}}</p>
                 </div>
                 <div class="col-12 col-lg-7">
                     <p class="about-title">{{__('lang.Çatdırılma')}}</p>
-                    <p class="about-subtitle">{{__('lang.Qayğıkeş və diqqətli kadrlarımızla məhsulunuzun yerinə çatdırılmasını öz üzərimizə götürürük. İxtisaslaşmış kadrlar müştəri məmnuniyyətini hər zaman ön planda saxlayır')}}</p>
+                    <p class="about-subtitle">{{__('lang.Çatdırılma_text')}}</p>
                 </div>
                 <div class="col-12 col-lg-5">
                     <img src="front/assets/images/a-4.jpg">

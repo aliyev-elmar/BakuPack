@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-12 col-lg-7">
                     <p class="delivery-title">{{__('lang.Çatdırılma')}}</p>
-                    <p class="delivery-subtitle">{{__('lang.Qayğıkeş və diqqətli kadrlarımızla məhsulunuzun yerinə çatdırılmasını öz üzərimizə götürürük. İxtisaslaşmış kadrlar müştəri məmnuniyyətini hər zaman ön planda saxlayır')}}</p>
+                    <p class="delivery-subtitle">{{__('lang.Çatdırılma_text')}}</p>
                 </div>
                 
             </div>

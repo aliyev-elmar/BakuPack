@@ -43,7 +43,7 @@
                     <form class="row" action="{{route('contact-post')}}" method="post">
                         @csrf
                         <div class="col-12">
-                        <h2 class="title">{{__('lang.Bizimlə əlaqə saxlayın')}}</h2>
+                        <h2 class="title">{{__('lang.Bizimlə_əlaqə')}}</h2>
                             @if(Session::has('success'))
                                 <div class="alert alert-success">{{ Session::get('success')}}</div>
                             @endif

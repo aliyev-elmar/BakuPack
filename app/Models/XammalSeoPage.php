@@ -2,13 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Translatable;
 
-
-class Tercume extends Model
+class XammalSeoPage extends Model
 {
     use Translatable;
-    protected $translatable = ['text'];
+    protected $translatable = ['meta_title','meta_description','meta_keywords'];
 }

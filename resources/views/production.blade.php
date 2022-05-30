@@ -1,11 +1,14 @@
 @extends('layouts.master')
+@section('meta_title'){{$seo->getTranslatedAttribute('meta_title', App::getLocale(), 'az')}}@endsection
+@section('meta_description'){{$seo->getTranslatedAttribute('meta_description', App::getLocale(), 'az')}}@endsection
+@section('meta_keywords'){{$seo->getTranslatedAttribute('meta_keywords', App::getLocale(), 'az')}}@endsection
 @section('content')
     <!-- Breadcrumb -->
     <section id="breadcrumb">
         <div class="container">
             <ul>
-                <li><a href="{{route('home')}}">{{__('lang.Ana səhifə')}}</a></li>
-                <li><i class="fas fa-slash"></i> {{__('lang.İstehsal prosesi')}}</li>
+                <li><a href="{{route('home')}}">{{__('lang.Ana_səhifə')}}</a></li>
+                <li><i class="fas fa-slash"></i> {{__('lang.İstehsal_prosesi')}}</li>
             </ul>
         </div>
     </section>
@@ -15,20 +18,20 @@
         <div class="container">
 
             <div class="title-div">
-                <h2 class="title">{{__('lang.İstehsal prosesi')}}</h2>
+                <h2 class="title" data-aos="fade-up">{{__('lang.İstehsal_prosesi')}}</h2>
             </div>
            
             <div class="row">
                 <div class="col-lg-6">
-                    <p class="production-title">Lorem Ipsum</p>
-                    <p class="production-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <p class="production-title" data-aos="fade-up">{{__('lang.İstehsal_prosesi_top_title')}}</p>
+                    <p class="production-subtitle" data-aos="fade-up">{{__('lang.İstehsal_prosesi_top_text')}}</p>
                 </div>
-                <div class="col-lg-6"><img src="front/assets/images/istehsal-1.jpg"></div>
-                <div class="col-lg-6"><img src="front/assets/images/istehsal-2.jpg"></div>
+                <div class="col-lg-6"><img src="{{asset('front/assets/images/istehsal-1.jpg')}}" data-aos="fade-up"></div>
+                <div class="col-lg-6"><img src="{{asset('front/assets/images/istehsal-2.jpg')}}" data-aos="fade-up"></div>
                 <div class="col-lg-6">
                     <span class="point"></span>
-                    <p class="production-title">Lorem Ipsum</p>
-                    <p class="production-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <p class="production-title" data-aos="fade-up">{{__('lang.İstehsal_prosesi_bottom_title')}}</p>
+                    <p class="production-subtitle" data-aos="fade-up">{{__('lang.İstehsal_prosesi_bottom_text')}}</p>
                 </div>
                 
             </div>

@@ -8,61 +8,96 @@ use App\Models\Partner;
 use App\Models\Message;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\HomeSeoPage;
+use App\Models\AbuotusSeoPage;
+use App\Models\XammalSeoPage;
+use App\Models\ProductSeoPage;
+use App\Models\DeliverySeoPage;
+use App\Models\ProductionSeoPage;
+use App\Models\GallerySeoPage;
+use App\Models\ContactSeoPage;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
     public function index(){
+        $home_seo       = HomeSeoPage::first();
         $carousel_items = Slider::with('translations')->limit(4)->get();
         $partners       = Partner::all();
-        return view('home',compact('carousel_items','partners'));
+        return view('home',compact('carousel_items','partners','home_seo'));
     }
 
     public function product(){
+        $seo      = ProductSeoPage::first();
         $products = Product::withTranslations()->get();
-        return view('product',compact('products'));
+        return view('product',compact('products','seo'));
     }
 
     public function productSingle($slug){
+        $seo           = ProductSeoPage::first();
         $category_data = Category::withTranslations()->whereSlug($slug)->first();
-        $products      = Product::withTranslations()->whereCategory($category_data->id)->get();
-        return view('product',compact('products','category_data'));
+        if($category_data !== null){
+            $products      = Product::withTranslations()->whereCategory($category_data->id)->get();
+            return view('product',compact('products','category_data','seo'));
+        }else{
+            return redirect()->route("product");
+        }
     }
 
+    public function productSinglePost(Request $request){
+        $seo           = ProductSeoPage::first();
+        $category_data = Category::withTranslations()->whereId($request->category_id)->first();
+        $products      = Product::withTranslations()->whereCategory($request->category_id)->get();
+        return  view('product',compact('products','category_data','seo'));
+    } 
+
     public function about_us(){
-        return view('about_us');
+        $seo = AbuotusSeoPage::first();
+        return view('about_us',compact('seo'));
     }
 
     public function xammal(){
-        return view('xammal');
+        $seo = XammalSeoPage::first();
+        return view('xammal',compact('seo'));
     }
 
     public function delivery(){
-        return view('delivery');
+        $seo = DeliverySeoPage::first();
+        return view('delivery',compact('seo'));
     }
 
     public function production(){
-        return view('production');
+        $seo = ProductionSeoPage::first();
+        return view('production',compact('seo'));
     }
 
     public function gallery(){
-        return view('gallery');
+         $seo = GallerySeoPage::first();
+        return view('gallery',compact('seo'));
     }
 
     public function contact(){
-        return view('contact');
+        $seo = ContactSeoPage::first();
+        return view('contact',compact('seo'));
     }
 
     public function contactPost(Request $request){
+        $validated = $request->validate([
+            'fullname'=> 'required|max:255',
+            'email'   => 'required|max:255',
+            'phone'   => 'required|max:255',
+            'company' => 'required|max:255',
+        ]);
+
         $message = new Message;
-        $message->fullname = $request->fullname;
-        $message->email    = $request->email;
-        $message->phone    = $request->phone;
-        $message->company  = $request->company;
+        $message->fullname = $validated['fullname'];
+        $message->email    = $validated['email'];
+        $message->phone    = $validated['phone'];
+        $message->company  = $validated['company'];
 
         try {
             $email = "info@bakupack.az";
-            $title = "Baku Pack Saytindan mesaj var!";
+            $title = "Baku Pack Saytından mesaj var!";
 
             Mail::send('send_mail', ['fullname'=>$request->fullname,'email'   =>$request->email,'phone'   =>$request->phone,'company' =>$request->company ], 
             function($message) use ($email,$title){
@@ -80,20 +115,14 @@ class HomeController extends Controller
         if($categories[0] == "all-data"){
             //Butun kateqoriyalari secerse
             $category = (object) [
-                'top_h1'     => 'Butun kateqoriyalarin h1i',
-                'top_text'   => 'Butun kateqoriyalarin top texti',
-                'bottom_h2'  => 'Butun kateqoriyalarin h2si',
-                'bottom_text'=> 'Butun kateqoriyalarin bottom texti',
+                "data"     => "all",
             ];
             $products = Product::all();
         }
         elseif(count($categories) > 1){
             //Iki kateqoriyani eyni zamanda secerse
             $category = (object) [
-                'top_h1'     => 'Butun kateqoriyalarin h1i',
-                'top_text'   => 'Butun kateqoriyalarin top texti',
-                'bottom_h2'  => 'Butun kateqoriyalarin h2si',
-                'bottom_text'=> 'Butun kateqoriyalarin bottom texti',
+               "data" => "all",
             ];
             $products = [];
             foreach($categories as $category_id){

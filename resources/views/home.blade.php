@@ -52,15 +52,9 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <span class="point"></span>
-<<<<<<< HEAD
                         <h2 class="title" data-aos="fade-up">Baku Pack</h2>
                         <p data-aos="fade-up">{{__('lang.Haqqimizda_text')}}</p>
                         <a href="{{route('about_us')}}" class="button" data-aos="fade-up">{{__('lang.Haqqimizda')}}</a>
-=======
-                        <h2 class="title">Baku Polygraphy</h2>
-                        <p>{{__('lang.Haqqimizda_text')}}</p>
-                        <a href="{{route('about_us')}}" class="button">{{__('lang.Haqqimizda')}}</a>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
                     </div>
                     <div class="col-12 col-lg-6">
                         <img class="about-img-1" src="front/assets/images/about-2.jpg" data-aos="fade-up"/>
@@ -135,11 +129,7 @@
                         <img src="front/assets/images/2.jpg" class="form-img-1" data-aos="fade-up"/>
                     </div>
                     <div class="col-lg-5">
-<<<<<<< HEAD
                         <h2 class="title" data-aos="fade-up">{{__('lang.Bizimlə_əlaqə')}}</h2>
-=======
-                        <h2 class="title">{{__('lang.Bizimlə_əlaqə')}}</h2>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
                         <form class="row" action="{{route('contact-post')}}" method="post">
                             @csrf
                             <div class="col-12">

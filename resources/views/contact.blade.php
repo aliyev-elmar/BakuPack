@@ -46,11 +46,7 @@
                     <form class="row" action="{{route('contact-post')}}" method="post">
                         @csrf
                         <div class="col-12">
-<<<<<<< HEAD
                         <h2 class="title" data-aos="fade-up">{{__('lang.Bizimlə_əlaqə')}}</h2>
-=======
-                        <h2 class="title">{{__('lang.Bizimlə_əlaqə')}}</h2>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
                             @if(Session::has('success'))
                                 <div class="alert alert-success">{{ Session::get('success')}}</div>
                             @endif

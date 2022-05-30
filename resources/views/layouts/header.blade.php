@@ -33,7 +33,6 @@
             <div class="header-menu">
                 <nav>
                     <ul class="menu">
-<<<<<<< HEAD
                         <li><a href="{{route('about_us')}}" @if(Route::is('about_us')) class="active" @endif)>{{__('lang.Haqqimizda')}}</a></li>
                         <li><a href="{{route('xammal')}}"   @if(Route::is('xammal')) class="active" @endif>{{__('lang.Xammal')}}</a></li>
                         <li class="dropdown"><a href="{{route('product')}}" @if(Route::is('product')) class="active" @endif>{{__('lang.Məhsullar')}}</a> <i class="fas fa-angle-down"></i>
@@ -41,13 +40,6 @@
                                 <li class="categroy_li">
                                 <a href="{{route('product')}}" @if(Route::is('product')) class="active" @endif>{{__('lang.Bütün_məhsullar')}}</a>
                                 </li>
-=======
-                        <li><a href="{{route('about_us')}}">{{__('lang.Haqqimizda')}}</a></li>
-                        <li><a href="{{route('xammal')}}">{{__('lang.Xammal')}}</a></li>
-                        <li class="dropdown"><a href="{{route('product')}}">{{__('lang.Məhsullar')}}</a> <i class="fas fa-angle-down"></i>
-                            <ul class="submenu">
-                                <li><a href="{{route('product')}}">{{__('lang.Bütün_məhsullar')}}</a></li>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
                                 @foreach ($categories as $category)
                                     <form class="post_cat" action="{{ route('product-single-post' ,$category->getTranslatedAttribute('slug', App::getLocale(), 'az')) }}" method="post">
                                         @csrf
@@ -56,7 +48,6 @@
                                 @endforeach
                             </ul>
                         </li>
-<<<<<<< HEAD
                         <li><a href="{{route('delivery')}}"  @if(Route::is('delivery')) class="active" @endif>{{__('lang.Çatdırılma')}}</a></li>
                         <li><a href="{{route('production')}}"@if(Route::is('production')) class="active" @endif>{{__('lang.İstehsal_prosesi')}}</a></li>
                         <li><a href="{{route('gallery')}}"   @if(Route::is('gallery')) class="active" @endif>{{__('lang.Qalereya')}}</a></li>
@@ -69,20 +60,7 @@
                         <li><a href="/"   class="lang">AZ</a></li>
                         <li><a href="/en" class="lang">EN</a></li>
                         <li><a href="/ru" class="lang">RU</a></li>
-=======
-                        <li><a href="{{route('delivery')}}">{{__('lang.Çatdırılma')}}</a></li>
-                        <li><a href="{{route('production')}}">{{__('lang.İstehsal_prosesi')}}</a></li>
-                        <li><a href="{{route('gallery')}}">{{__('lang.Qalereya')}}</a></li>
-                        <li><a href="{{route('contact')}}">{{__('lang.Əlaqə')}}</a></li>
-                    </ul>
-                </nav>
-                <div class="lang">
-                    <span>{{App::getLocale()}} <i class="fas fa-angle-down"></i></span>
-                    <ul>
-                        <li><a href="{{ URL::toRoute($current = Route::current(),['language'=>'az'] + $current->parameters(),true) }}">AZ</a></li>
-                        <li><a href="{{ URL::toRoute($current = Route::current(),['language'=>'en'] + $current->parameters(),true) }}">EN</a></li>
-                        <li><a href="{{ URL::toRoute($current = Route::current(),['language'=>'ru'] + $current->parameters(),true) }}">RU</a></li>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
+
                     </ul>
                 </div>
             </div>

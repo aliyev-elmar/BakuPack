@@ -7,7 +7,6 @@
                 </div>
                 <div class="col-sm-12 col-lg-2">
                     <ul class="footer-menu">
-<<<<<<< HEAD
                         <li><a href="{{route('about_us')}}"><i class="fas fa-angle-right"></i> {{__('lang.Haqqimizda')}}</a></li>
                         <li><a href="{{route('product')}}"><i class="fas fa-angle-right"></i> {{__('lang.Məhsullar')}}</a></li>
                         <li><a href="{{route('xammal')}}"><i class="fas fa-angle-right"></i> {{__('lang.Xammal')}}</a></li>
@@ -15,11 +14,7 @@
                         <li><a href="{{route('delivery')}}"><i class="fas fa-angle-right"></i> {{__('lang.Çatdırılma')}}</a></li>
                         <li><a href="{{route('gallery')}}"><i class="fas fa-angle-right"></i> {{__('lang.Qalereya')}}</a></li>
                         <li><a href="{{route('contact')}}"><i class="fas fa-angle-right"></i> {{__('lang.Əlaqə')}}</a></li>
-=======
-                        <li><a href="{{route('about_us')}}">{{__('lang.Haqqimizda')}}</a></li>
-                        <li><a href="{{route('delivery')}}">{{__('lang.Çatdırılma')}}</a></li>
-                        <li><a href="{{route('contact')}}">{{__('lang.Əlaqə')}}</a></li>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
+
                     </ul>
                 </div>
                 <div class="col-sm-12 col-lg-4">
@@ -46,11 +41,7 @@
                 </div>
             </div>
             <div class="copyright">
-<<<<<<< HEAD
                 <p>© 2022 BakuPack Factory. {{__('lang.Müəllif')}}</p>
-=======
-                <p>© 2022 BakuPolygraphy.az. {{__('lang.Müəllif')}}</p>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
                 <a href="https://jedai.az/az/saytlarin-hazirlanmasi" target="blank">Site By <img src="{{asset('front/assets/images/jedai.png')}}"></a>
             </div>
         </div>

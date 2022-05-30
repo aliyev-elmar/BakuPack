@@ -34,13 +34,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-7">
-<<<<<<< HEAD
                     <p class="about-title" data-aos="fade-up">{{__('lang.Xammal')}}</p>
                     <p class="about-subtitle" data-aos="fade-up">{{__('lang.Xammal_text')}}</p>
-=======
-                    <p class="about-title">{{__('lang.Xammal')}}</p>
-                    <p class="about-subtitle">{{__('lang.Xammal_text')}}</p>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
+
                 </div>
                 <div class="col-12 col-lg-5">
                     <img src="{{asset('front/assets/images/a-5.png')}}" data-aos="fade-up">
@@ -51,21 +47,13 @@
                 <div class="col-12 col-lg-7">
                     <span class="point"></span>
                     <span class="point-2"></span>
-<<<<<<< HEAD
                     <p class="about-title" data-aos="fade-up">{{__('lang.Haqqimizda_peshakar')}}</p>
                     <p class="about-subtitle" data-aos="fade-up">{{__('lang.Haqqimizda_peshakar_text')}}</p>
                 </div>
                 <div class="col-12 col-lg-7">
                     <p class="about-title" data-aos="fade-up">{{__('lang.Çatdırılma')}}</p>
                     <p class="about-subtitle" data-aos="fade-up">{{__('lang.Çatdırılma_text')}}</p>
-=======
-                    <p class="about-title">{{__('lang.Haqqimizda_peshakar')}}</p>
-                    <p class="about-subtitle">{{__('lang.Haqqimizda_peshakar_text')}}</p>
-                </div>
-                <div class="col-12 col-lg-7">
-                    <p class="about-title">{{__('lang.Çatdırılma')}}</p>
-                    <p class="about-subtitle">{{__('lang.Çatdırılma_text')}}</p>
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
+
                 </div>
                 <div class="col-12 col-lg-5">
                     <img src="{{asset('front/assets/images/a-4.jpg')}}" data-aos="fade-up">

@@ -1,6 +1,6 @@
 <?php
 return [
-<<<<<<< HEAD
+
     "Ana_səhifə"=> "Главная страница",
     "İstehsal_prosesi" => "Процесс производства",
     "Haqqimizda"=> "О нас",
@@ -62,8 +62,7 @@ return [
     'catdirilma' => 'dostavka',
     'istehsal-prosesi' => 'process-proizvodstva',
     'qalereya'   => 'galereya',
-    'elaqe'      => 'kontakti'
-=======
+    'elaqe'      => 'kontakti',
     "Ana səhifə"=> "Home page",
     "İstehsal_prosesi" => "İstehsal prosesi",
     "Haqqimizda"=> "rus",
@@ -90,8 +89,7 @@ return [
     "Peşəkar_dizaynlar" => "Peşəkar dizaynlar",
     "Böyük_həcmli" => "Böyük həcmli sifarişlər",
     "Müəllif" => "Müəllif hüquqları qorunur",
->>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
-]
+];
 
 
 ?>

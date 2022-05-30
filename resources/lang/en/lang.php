@@ -1,16 +1,25 @@
 <?php
 return [
+<<<<<<< HEAD
     "Ana_səhifə"=> "Homepage",
     "İstehsal_prosesi" => "Production process",
     "Haqqimizda"=> "About us",
     "Qablaşdırma" => "Packaging",
     "Xammal"    => "Raw materials",
+=======
+    "Ana səhifə"=> "Home page",
+    "İstehsal_prosesi" => "İstehsal prosesi",
+    "Haqqimizda"=> "About us",
+    "Qablaşdırma" => "Qablaşdırma en",
+    "Xammal"    => "Xammal en",
+>>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
     "Məhsullar" => "Products",
     "Çatdırılma"=> "Delivery",
     "Kateqoriyalar" => "Categories",
     "Əlaqə"     => "Contact",
     "Göndər"    => "Send",
     "Qalereya"  => "Gallery",
+<<<<<<< HEAD
     "Bütün_məhsullar" => "All products",
     "Hamısı"    => "All",
    "Qablaşdırma_ana_sehife_text" => "We offer a wide range of packaging boxes for packaging products. There are standard size ready-made packaging products. We also accept orders for packaging products with your logo, you can choose the box material, size, paper type and other features.",
@@ -63,6 +72,23 @@ return [
     'istehsal-prosesi' => 'production-process',
     'qalereya'   => 'gallery',
     'elaqe'      => 'contacts'
+=======
+    "Bütün_məhsullar" => "Bütün məhsullar",
+    "Hamısı"    => "All",
+    "Qarışıq"   => "Mixed",
+    "Qablaşdırma_məhsulları" => "Qablaşdırma məhsulları",
+    "Bizimlə_əlaqə" => "Bizimlə əlaqə saxlayın",
+    "Haqqimizda_text" => "BakuPolygraphy 50 nəfərə yaxın heyətdən ibarət olan və yeni avadlıqlarla təmin olunan şirkətdir və bütün növ karton qutu və qablaşdırma məhsullarını hazırlamaq gücünə malikdir. Biz qısa müddət ərzində müştərilərimizn çox yüksək rəyinə nail olmağı bacarmışıq. Şirkət tələb olunan istehsalat prosesinin hər mərhələsinə qüsursuz və keyfiyyətlə yanaşır, imic və reputasyasını qoruyur",
+    "Xammal_text" => "Dünyanın ən qabaqcıl istehsalçılarından (Çin, Rusiya, Türkiyə və s.) birbaşa xammal idxal edirik. Xammalın birbaşa sifarişi rəqabətdə üstünlüyümüzü təmin edir",
+    "Haqqimizda_peshakar" => "PEŞƏKAR DİZAYN İŞLƏRİ",
+    "Haqqimizda_peshakar_text" => "Müştərilərilərimizin istəyinə və zövqünə uyğun dizaynları hazırlamaqla birlikdə öz təkliflərimizi də təqdim edirik",
+    "Çatdırılma_text" => "Qayğıkeş və diqqətli kadrlarımızla məhsulunuzun yerinə çatdırılmasını öz üzərimizə götürürük. İxtisaslaşmış kadrlar müştəri məmnuniyyətini hər zaman ön planda saxlayır",
+    "Niyə_seçməlisiniz" => "Niyə bizi seçməlisiniz en?",
+    "uch_addimda" => "3 addımda",
+    "Peşəkar_dizaynlar" => "Peşəkar dizaynlar",
+    "Böyük_həcmli" => "Böyük həcmli sifarişlər",
+    "Müəllif" => "Müəllif hüquqları qorunur",
+>>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
 ]
 
 

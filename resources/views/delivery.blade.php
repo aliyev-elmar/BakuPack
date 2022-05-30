@@ -37,8 +37,13 @@
                     <img src="{{asset('front/assets/images/a-4.jpg')}}" data-aos="fade-up">
                 </div>
                 <div class="col-12 col-lg-7">
+<<<<<<< HEAD
                     <p class="delivery-title" data-aos="fade-up">{{__('lang.Çatdırılma')}}</p>
                     <p class="delivery-subtitle" data-aos="fade-up">{{__('lang.Çatdırılma_text')}}</p>
+=======
+                    <p class="delivery-title">{{__('lang.Çatdırılma')}}</p>
+                    <p class="delivery-subtitle">{{__('lang.Çatdırılma_text')}}</p>
+>>>>>>> 910980f8453219d6dafef311a72ad1d978b49902
                 </div>
                 
             </div>

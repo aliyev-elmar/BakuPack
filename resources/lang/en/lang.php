@@ -13,7 +13,7 @@ return [
     "Qalereya"  => "Gallery",
     "Bütün_məhsullar" => "All products",
     "Hamısı"    => "All",
-    "Qablaşdırma_ana_sehife_text" => "We offer a wide range of packaging boxes for packaging products. There are standard size ready-made packaging products. We also accept orders for packaging products with your logo, you can choose the box material, size, paper type and other features.",
+   "Qablaşdırma_ana_sehife_text" => "We offer a wide range of packaging boxes for packaging products. There are standard size ready-made packaging products. We also accept orders for packaging products with your logo, you can choose the box material, size, paper type and other features.",
     "Butun_kateqoriyalarin_h1" => "Packaging products",
     "Butun_kateqoriyalarin_top_texti" => "We offer a wide range of packaging boxes for packaging products. There are standard size ready-made packaging products. We also accept orders for packaging products with your logo, you can choose the box material, size, paper type and other features.",
     "Butun_kateqoriyalarin_h2" => "Packing boxes",
@@ -63,7 +63,7 @@ return [
     'istehsal-prosesi' => 'production-process',
     'qalereya'   => 'gallery',
     'elaqe'      => 'contacts'
-];
+]
 
 
 ?>

@@ -63,6 +63,7 @@ return [
     'istehsal-prosesi' => 'istehsal-prosesi',
     'qalereya'   => 'qalereya',
     'elaqe'      => 'elaqe'
-];
+]
+
 
 ?>

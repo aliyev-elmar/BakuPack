@@ -13,11 +13,7 @@
                     <img src="{{asset('front/assets/images/a-2.jpg')}}">
                 </div>
                 <div class="col-lg-6">
-<<<<<<< HEAD
                     <h1 class="title"><span>Baku</span> Pack</h1>
-=======
-                    <h2 class="title"><span>Baku</span> Pack</h2>
->>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                     <p>{{__('lang.Haqqimizda_text')}}</p>
                 </div>
             </div>
@@ -38,14 +34,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-7">
-<<<<<<< HEAD
                     <h2 class="about-title" data-aos="fade-up">{{__('lang.Xammal')}}</h2>
                     <p class="about-subtitle" data-aos="fade-up">{{__('lang.Xammal_text')}}</p>
-=======
-                    <p class="about-title" data-aos="fade-up">{{__('lang.Xammal')}}</p>
-                    <p class="about-subtitle" data-aos="fade-up">{{__('lang.Xammal_text')}}</p>
-
->>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                 </div>
                 <div class="col-12 col-lg-5">
                     <img src="{{asset('front/assets/images/a-5.png')}}" data-aos="fade-up">
@@ -56,22 +46,12 @@
                 <div class="col-12 col-lg-7">
                     <span class="point"></span>
                     <span class="point-2"></span>
-<<<<<<< HEAD
                     <h2 class="about-title" data-aos="fade-up">{{__('lang.Haqqimizda_peshakar')}}</h2>
                     <p class="about-subtitle" data-aos="fade-up">{{__('lang.Haqqimizda_peshakar_text')}}</p>
                 </div>
                 <div class="col-12 col-lg-7">
                     <h2 class="about-title" data-aos="fade-up">{{__('lang.Çatdırılma')}}</h2>
                     <p class="about-subtitle" data-aos="fade-up">{{__('lang.Çatdırılma_text')}}</p>
-=======
-                    <p class="about-title" data-aos="fade-up">{{__('lang.Haqqimizda_peshakar')}}</p>
-                    <p class="about-subtitle" data-aos="fade-up">{{__('lang.Haqqimizda_peshakar_text')}}</p>
-                </div>
-                <div class="col-12 col-lg-7">
-                    <p class="about-title" data-aos="fade-up">{{__('lang.Çatdırılma')}}</p>
-                    <p class="about-subtitle" data-aos="fade-up">{{__('lang.Çatdırılma_text')}}</p>
-
->>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                 </div>
                 <div class="col-12 col-lg-5">
                     <img src="{{asset('front/assets/images/a-4.jpg')}}" data-aos="fade-up">

@@ -16,10 +16,8 @@ use App\Models\DeliverySeoPage;
 use App\Models\ProductionSeoPage;
 use App\Models\GallerySeoPage;
 use App\Models\ContactSeoPage;
-<<<<<<< HEAD
 use App\Http\Requests\ContactRequest;
-=======
->>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
+
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
@@ -40,7 +38,6 @@ class HomeController extends Controller
     }
 
     public function productSingle($slug){
-<<<<<<< HEAD
         $categories = Category::withTranslations()->get();
         foreach($categories as $category){
             if($slug == $category->getTranslatedAttribute('slug', \App::getLocale(), 'az')){
@@ -51,15 +48,7 @@ class HomeController extends Controller
                     return view('product',compact('products','category_data','seo'));
                 }
             }
-=======
-        $seo           = ProductSeoPage::first();
-        $category_data = Category::withTranslations()->whereSlug($slug)->first();
-        if($category_data !== null){
-            $products      = Product::withTranslations()->whereCategory($category_data->id)->get();
-            return view('product',compact('products','category_data','seo'));
-        }else{
-            return redirect()->route("product");
->>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
+
         }
     }
 
@@ -91,11 +80,7 @@ class HomeController extends Controller
     }
 
     public function gallery(){
-<<<<<<< HEAD
         $seo = GallerySeoPage::first();
-=======
-         $seo = GallerySeoPage::first();
->>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
         return view('gallery',compact('seo'));
     }
 
@@ -104,17 +89,13 @@ class HomeController extends Controller
         return view('contact',compact('seo'));
     }
 
-<<<<<<< HEAD
     public function contactPost(ContactRequest $request){
-=======
-    public function contactPost(Request $request){
         $validated = $request->validate([
             'fullname'=> 'required|max:255',
             'email'   => 'required|max:255',
             'phone'   => 'required|max:255',
             'company' => 'required|max:255',
         ]);
->>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
 
         $message = new Message;
         $message->fullname = $validated['fullname'];
@@ -150,7 +131,6 @@ class HomeController extends Controller
 
         if($categories[0] == "all-data"){
             //Butun kateqoriyalari secerse
-<<<<<<< HEAD
             $meta_title       = $seo->getTranslatedAttribute("meta_title", \App::getLocale(), 'az');
             $meta_description = $seo->getTranslatedAttribute("meta_description", \App::getLocale(), 'az');
             $meta_keywords    = $seo->getTranslatedAttribute("meta_keywords", \App::getLocale(), 'az');
@@ -172,19 +152,6 @@ class HomeController extends Controller
             $category         = (object) [ "data" => "all"];
             $products         = [];
 
-=======
-            $category = (object) [
-                "data"     => "all",
-            ];
-            $products = Product::all();
-        }
-        elseif(count($categories) > 1){
-            //Iki kateqoriyani eyni zamanda secerse
-            $category = (object) [
-               "data" => "all",
-            ];
-            $products = [];
->>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
             foreach($categories as $category_id){
                 $product = Product::whereCategory($category_id)->withTranslations()->get();
                 array_push($products,  $product);

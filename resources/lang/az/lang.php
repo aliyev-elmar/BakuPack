@@ -1,11 +1,20 @@
 <?php
 return [
+<<<<<<< HEAD
     "Ana_səhifə"=> "Əsas səhifə",
     "İstehsal_prosesi" => "İstehsal Prosesi",
     "Haqqimizda"=> "Haqqımızda",
     "Qablaşdırma" => "Qablaşdırma",
     "Xammal"    => "Xammal",
     "Məhsullar" => "Kataloq",
+=======
+    "Ana_səhifə"=> "Ana səhifə",
+    "İstehsal_prosesi" => "İstehsal prosesi",
+    "Haqqimizda"=> "Haqqımızda",
+    "Qablaşdırma" => "Qablaşdırma",
+    "Xammal"    => "Xammal",
+    "Məhsullar" => "Məhsullar",
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
     "Çatdırılma"=> "Çatdırılma",
     "Kateqoriyalar" => "Kateqoriyalar",
     "Əlaqə"     => "Əlaqə",
@@ -13,6 +22,7 @@ return [
     "Qalereya"  => "Qalereya",
     "Bütün_məhsullar" => "Bütün məhsullar",
     "Hamısı"    => "Hamısı",
+<<<<<<< HEAD
     "Qablaşdırma_ana_sehife_text" => "Bütün növ məhsullar üçün geniş çeşiddə qablaşdırma qutuları təklif edirik. Standart ölçüdə hazır qablaşdırma məhsulları var. Həmçinin sizin loqo ilə qablaşdırma məhsulları hazırlanması üçün sifariş qəbul edirik, qutu materialını, ölçülərini, kağız növünü və digər xüsussiyyətlərini seçə bilərsiniz.",
     "Butun_kateqoriyalarin_h1" => "Qablaşdırma məhsulları",
     //"Butun_kateqoriyalarin_top_texti" => "Qablaşdırma məhsulları üçün geniş çeşiddə qablaşdırma qutuları təklif edirik. Standart ölçüdə hazır qablaşdırma məhsulları var. Həmçinin sizin loqo ilə qablaşdırma məhsulları hazırlanması üçün sifariş qəbul edirik, qutu materialını, ölçülərini, kağız növünü və digər xüsussiyyətlərini seçə bilərsiniz.",
@@ -49,6 +59,42 @@ return [
     "xammal_ikinci_title" => "Bristol",
     "xammal_ikinci_subtitle" => "200-400 qr",
     "xammal_ikinci_subtitle2"=> "",
+=======
+    "Qablaşdırma_ana_sehife_text" => "Qablaşdırma məhsulları üçün geniş çeşiddə qablaşdırma qutuları təklif edirik. Standart ölçüdə hazır qablaşdırma məhsulları var. Həmçinin sizin loqo ilə qablaşdırma məhsulları hazırlanması üçün sifariş qəbul edirik, qutu materialını, ölçülərini, kağız növünü və digər xüsussiyyətlərini seçə bilərsiniz.",
+    "Butun_kateqoriyalarin_h1" => "Qablaşdırma məhsulları",
+    "Butun_kateqoriyalarin_top_texti" => "Qablaşdırma məhsulları üçün geniş çeşiddə qablaşdırma qutuları təklif edirik. Standart ölçüdə hazır qablaşdırma məhsulları var. Həmçinin sizin loqo ilə qablaşdırma məhsulları hazırlanması üçün sifariş qəbul edirik, qutu materialını, ölçülərini, kağız növünü və digər xüsussiyyətlərini seçə bilərsiniz.",
+    "Butun_kateqoriyalarin_h2" => "Qablaşdırma qutuları",
+    "Butun_kateqoriyalarin_bottom_texti" => "Keramika, zərgərlik, konfet, tortlar, şirniyyatlar, meyvə-tərəvəz və digər - bütün bunlar qablaşdırma qutuları tələb edir. İstənilən növ kağız və kartondan, həmçinin hər iki materialdan hazır qablaşdırma qutuları bizdən ala bilərsiniz; istənilən rəngdə; və klassik dizaynda qablaşdırma qutuları.",
+    "İstehsal_prosesi_top_title" => "Istehsalat prosesi",
+    "İstehsal_prosesi_top_text"  => "Qablaşdırma bizim işimizdir, istehsalat prosesi zamanı biz müxtəlif formatlı qutular istehsal edirik: şirniyyat qutuları, yemək qutuları, tortlar üçün qutular, meyvə və tərəvəzlər üçün qutular, şirniyyatlar üçün qutular və s. İstehsal prosesi ən son standartlara uyğun və ən son texnologiya ilə həyata keçirilir.",
+    "İstehsal_prosesi_bottom_title" => "Baku Pack istehsalat prosesi",
+    "İstehsal_prosesi_bottom_text"  => "Istehsalat prosesi zamanı sifarişlə hazırlanmış qablaşdırma kartonlarının çəkilən xərclər aşağıdakı komponentlərdən ibarətdir: Xammalın dəyəri (düz təbəqələr üçün büzməli kağız və karton, yapışqan); Məhsul dizaynının hazırlanması və müştəri ilə təsdiqlənməsi; Bıçaqların qutuların ölçüsünə görə formasının hazırlanması və ya yenidən konfiqurasiyası; Qofro karton vərəqlərin kəsilməsi və zımbalama üçün hazırlanması; boşluqların kəsilməsi; 20-25 ədəd paketlərə yığılması, plyonkaya bükülməsi və altlıqlara yüklənməsi; Hazır qutuların yığılması və yapışdırılması.",
+    "Çatdırılma_single_title" => "Çatdırılma",
+    "Çatdırılma_single_text"  => "Bakı şəhəri üzrə çatdırılma var. BakuPack Factory çatdırılma şəhərin istənilən yerinə edə bilər. Qablaşdırma məhsullarınız üçün çatdırılma keyfiyyətli və sürətli şəkildə olunacaq.",
+    "Qarışıq"   => "Qablaşdırma məhsulları",
+    "Qablaşdırma_məhsulları" => "Qablaşdırma məhsulları üçün geniş çeşiddə qablaşdırma qutuları təklif edirik. Standart ölçüdə hazır qablaşdırma məhsulları var. Həmçinin sizin loqo ilə qablaşdırma məhsulları hazırlanması üçün sifariş qəbul edirik, qutu materialını, ölçülərini, kağız növünü və digər xüsussiyyətlərini seçə bilərsiniz.",
+    "Qablaşdırma_məhsulları1" => "Keramika, zərgərlik, konfet, tortlar, şirniyyatlar, meyvə-tərəvəz və digər - bütün bunlar qablaşdırma qutuları tələb edir. İstənilən növ kağız və kartondan, həmçinin hər iki materialdan hazır qablaşdırma qutuları bizdən ala bilərsiniz; istənilən rəngdə; və klassik dizaynda qablaşdırma qutuları.",
+    "Bizimlə_əlaqə" => "Bizimlə əlaqə saxlayın",
+    "Haqqimizda_text" => "BakuPack 50 nəfərə yaxın heyətdən ibarət olan və yeni avadlıqlarla təmin olunan şirkətdir və bütün növ karton qutu və qablaşdırma məhsullarını hazırlamaq gücünə malikdir. Biz qısa müddət ərzində müştərilərimizn çox yüksək rəyinə nail olmağı bacarmışıq. Şirkət tələb olunan istehsalat prosesinin hər mərhələsinə qüsursuz və keyfiyyətlə yanaşır, imic və reputasyasını qoruyur",
+	"Xammal_title" => "Xammal",
+    "Xammal_text" => "Dünyanın ən qabaqcıl istehsalçılarından (Çin, Rusiya, Türkiyə və s.) birbaşa xammal idxal edirik. Xammalın birbaşa sifarişi rəqabətdə üstünlüyümüzü təmin edir. Xammal insan təsirinə az məruz qalmış və sonrakı emal üçün nəzərdə tutulmuş əmək obyektidir. Xammal ilk növbədə hasilat sənayesinin və kənd təsərrüfatının məhsuludur. Dünyanın ən qabaqcıl istehsalçılarından (Çin, Rusiya, Türkiyə və s.) birbaşa xammal idxal edirik.",
+    "Xammal_title1" => "Hansı növ Xammal idxal edirik?",
+	"Xammal_text1" => "BakuPack Factory xaricdən bu növ xammal idxal edir: Kağız; Melovka (C2S Parlag 170, 200, 250; C2S Matt 170, 200, 250); Bristol 250, 300, 350; Xromezas matt 190, 250, 280, 320, 350; Karton (kitab kartonu) 1mm, 1.2mm., 1.5mm., 2mm., 2.5mm; Laminaciya (Matt, gızılı, parlag, sədəf)",
+    "Haqqimizda_peshakar" => "Peşakar dizayn işləri",
+    "Haqqimizda_peshakar_text" => "Müştərilərimizin istək və zövqünə uyğun dizaynlar hazırlamaqla yanaşı, təkliflərimizi də təqdim edirik. Bütün növ çöl, iç qutuları, qablaşdırma məhsulları müştərilərimizin individual sifarişinə uyğun məmnunluqla istehsal edirik.",
+    "Çatdırılma_text" => "Qayğıkeş və diqqətli kadrlarımızla məhsulunuzun yerinə çatdırılmasını öz üzərimizə götürürük. İxtisaslaşmış kadrlar müştəri məmnuniyyətini hər zaman ön planda saxlayır.",
+    "Niyə_seçməlisiniz" => "Niyə bizi seçməlisiniz?",
+    "uch_addimda" => "Müştərilərimizin istəyinə və zövqünə uyğun dizaynları hazırlamaqla birlikdə öz təkliflərimizi də təqdim edirik. Həm böyük şirkətlər, həm də kiçik bizneslər üçün qablaşdırma sifarişlərini həyata keçiririk. İstənilən qablaşdırma sifarişini vaxtında yerinə yetirəcəyik.",
+    "Peşəkar_dizaynlar" => "Peşəkar dizaynlar",
+    "Böyük_həcmli" => "Bütün növ çöl, iç qutuları, qablaşdırma məhsulları müştərilərimizin individual sifarişinə uyğun məmnunluqla istehsal edirik. BakuPack olaraq məhsullarınızın istənilən ölçüdə, rəngdə və dizaynda qablaşdırma edə bilərik.",
+    "Müəllif" => "Müəllif hüquqları qorunur",
+    "xammal_birinci_title" => "Melovka",
+    "xammal_birinci_subtitle" => "C2S Parlag 170,200,250",
+    "xammal_birinci_subtitle2"=> "C2S Matt 170,200,250",
+    "xammal_ikinci_title" => "Bristol",
+    "xammal_ikinci_subtitle" => "C2S Parlag 170,200,250",
+    "xammal_ikinci_subtitle2"=> "C2S Matt 170,200,250",
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
     "xammal_ucuncu_title" => "Karton ( kitab kartonu)",
     "xammal_ucuncu_subtitle"=>"1mm, 1.2mm. 1.5mm. 2mm. 2.5mm",
     "xammal_dorduncu_title" => "Laminaciya",
@@ -64,6 +110,7 @@ return [
     'catdirilma' => 'catdirilma',
     'istehsal-prosesi' => 'istehsal-prosesi',
     'qalereya'   => 'qalereya',
+<<<<<<< HEAD
     'elaqe'      => 'elaqe',
     'fullname_required' => 'Tam adı daxil edin',
     'fullname_max'      => 'Tam adı maksimum 255 simvol ola bilər',
@@ -74,6 +121,9 @@ return [
     'phone_max'         => 'Telefon maksimum 255 simvol ola bilər',
     'company_required'  => 'Şirkət adını daxil edin',
     'company_max'       => 'Şirkət adı maksimum 255 simvol ola bilər'
+=======
+    'elaqe'      => 'elaqe'
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
 ]
 
 

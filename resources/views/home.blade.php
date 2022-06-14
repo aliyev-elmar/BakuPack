@@ -65,14 +65,24 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <span class="point"></span>
+<<<<<<< HEAD
                         <h1 class="title" data-aos="fade-up">BakuPack Factory</h1>
+=======
+                        <h2 class="title" data-aos="fade-up">Baku Pack</h2>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                         <p data-aos="fade-up">{{__('lang.Haqqimizda_text')}}</p>
                         <a href="{{route('about_us')}}" class="button" data-aos="fade-up">{{__('lang.Haqqimizda')}}</a>
                     </div>
                     <div class="col-12 col-lg-6">
+<<<<<<< HEAD
                         <img class="about-img-1" src="front/assets/images/about-2.jpg" data-aos="fade-up" @if(in_array(0, $keys)) alt="{{$keys_arr[0]}}" @endif />
                         <img class="about-img-2" src="front/assets/images/about-3.jpg" data-aos="fade-up" @if(in_array(1, $keys)) alt="{{$keys_arr[1]}}" @endif />
                         <img class="about-img-3" src="front/assets/images/about-1.jpg" data-aos="fade-up" @if(in_array(2, $keys)) alt="{{$keys_arr[2]}}" @else alt="{{$keys_arr[0]}}" @endif/>
+=======
+                        <img class="about-img-1" src="front/assets/images/about-2.jpg" data-aos="fade-up"/>
+                        <img class="about-img-2" src="front/assets/images/about-3.jpg" data-aos="fade-up"/>
+                        <img class="about-img-3" src="front/assets/images/about-1.jpg" data-aos="fade-up"/>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                     </div>
                 </div>
             </div>
@@ -87,7 +97,11 @@
                         <div class="card card-1" data-aos="fade-up">
                             <div class="card-icon"><img src="front/assets/images/b-1.svg"/></div>
                             <div class="card-text">
+<<<<<<< HEAD
                                 <p class="card-title">{{__('lang.Haqqimizda_peshakar')}}</p>
+=======
+                                <p class="card-title">{{__('lang.Peşəkar_dizaynlar')}}</p>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                                 <p class="card-subtitle">{{__('lang.Haqqimizda_peshakar_text')}}</p>
                             </div>
                         </div>
@@ -124,7 +138,11 @@
                     @foreach ($categories as $category)
                     <div class="col-12 col-sm-6 col-lg-3"  data-aos="fade-up">
                         <div class="card category-card">
+<<<<<<< HEAD
                             <a href="{{ route('product-single',$category->getTranslatedAttribute('slug', App::getLocale(), 'az')) }}"></a>
+=======
+                            <a href="{{ route('product-single',$category->slug) }}"></a>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                             <div class="card-title"><h3>{{$category->getTranslatedAttribute('category_name', App::getLocale(), 'az')}}</h3></div>
                             <div class="card-img"><img src="{{ Voyager::image($category->image) }}"/></div>
                             <div class="card-subtitle"><p>{{$category->getTranslatedAttribute('category_text', App::getLocale(), 'az')}}</p></div>
@@ -139,7 +157,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
+<<<<<<< HEAD
                         <img src="front/assets/images/2.jpg" class="form-img-1" data-aos="fade-up" @if(in_array(0, $keys)) alt="{{$keys_arr[0]}}" @endif />
+=======
+                        <img src="front/assets/images/2.jpg" class="form-img-1" data-aos="fade-up"/>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                     </div>
                     <div class="col-lg-5">
                         <h2 class="title" data-aos="fade-up">{{__('lang.Bizimlə_əlaqə')}}</h2>
@@ -153,6 +175,7 @@
                                     <div class="alert alert-danger">
                                         <ul>
                                             @foreach ($errors->all() as $error)
+<<<<<<< HEAD
                                                 @if($error == 'fullname_required')
                                                     <li>{{__('lang.fullname_required')}}</li>
                                                 @elseif($error == 'fullname_max')
@@ -172,6 +195,9 @@
                                                 @elseif($error == 'company_max')
                                                     <li>{{__('lang.company_max')}}</li>
                                                 @endif
+=======
+                                                <li>{{ $error }}</li>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                                             @endforeach
                                         </ul>
                                     </div>
@@ -195,7 +221,11 @@
                         </form>
                     </div>
                     <div class="col-lg-3">
+<<<<<<< HEAD
                         <img src="front/assets/images/1.jpg" class="form-img-2" data-aos="fade-up" @if(in_array(1, $keys)) alt="{{$keys_arr[1]}}" @endif />
+=======
+                        <img src="front/assets/images/1.jpg" class="form-img-2" data-aos="fade-up"/>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                     </div>
                 </div>
             </div>

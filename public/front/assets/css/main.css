@@ -2168,7 +2168,11 @@ footer .col-lg-4 ul li{
   border: 1px solid #FABC30;
   transition: all 0.4s linear;
   position: fixed;
+<<<<<<< HEAD
   right: 26px;
+=======
+  right: 50px;
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
   bottom: 70px;
   cursor: pointer; 
   z-index: 100;
@@ -2742,7 +2746,11 @@ footer .col-lg-4 ul li{
 @media only screen and (max-width: 575px) {
 
   .scroll-btn{
+<<<<<<< HEAD
     right: 26px;
+=======
+    right: 15px;
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
   }
   #gallery img {
     height: auto !important;

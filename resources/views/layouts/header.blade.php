@@ -68,7 +68,10 @@
             <div class="header-menu">
                 <nav>
                     <ul class="menu">
+<<<<<<< HEAD
                         <li><a href="{{route('home')}}"     @if(Route::is('home')) class="active" @endif)>{{__('lang.Ana_səhifə')}}</a></li>
+=======
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                         <li><a href="{{route('about_us')}}" @if(Route::is('about_us')) class="active" @endif)>{{__('lang.Haqqimizda')}}</a></li>
                         <li><a href="{{route('xammal')}}"   @if(Route::is('xammal')) class="active" @endif>{{__('lang.Xammal')}}</a></li>
                         <li class="dropdown"><a href="{{route('product')}}" @if(Route::is('product')) class="active" @endif>{{__('lang.Məhsullar')}}</a> <i class="fas fa-angle-down"></i>
@@ -96,6 +99,10 @@
                         <li><a href="/"   class="lang">AZ</a></li>
                         <li><a href="/en" class="lang">EN</a></li>
                         <li><a href="/ru" class="lang">RU</a></li>
+<<<<<<< HEAD
+=======
+
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                     </ul>
                 </div>
             </div>

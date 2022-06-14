@@ -46,7 +46,11 @@
                     <form class="row" action="{{route('contact-post')}}" method="post">
                         @csrf
                         <div class="col-12">
+<<<<<<< HEAD
                             <h2 class="title" data-aos="fade-up">{{__('lang.Bizimlə_əlaqə')}}</h2>
+=======
+                        <h2 class="title" data-aos="fade-up">{{__('lang.Bizimlə_əlaqə')}}</h2>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                             @if(Session::has('success'))
                                 <div class="alert alert-success">{{ Session::get('success')}}</div>
                             @endif
@@ -54,6 +58,7 @@
                                 <div class="alert alert-danger">
                                     <ul>
                                         @foreach ($errors->all() as $error)
+<<<<<<< HEAD
                                             @if($error == 'fullname_required')
                                                 <li>{{__('lang.fullname_required')}}</li>
                                             @elseif($error == 'fullname_max')
@@ -77,6 +82,13 @@
                                     </ul>
                                 </div>
                             @endif
+=======
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                             @endif
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                         </div>
                         <div class="col-12" data-aos="fade-up">
                             <input class="form-control" type="text" placeholder="{{__('lang.Ad_Soyad')}}*" name="fullname" value="{{old('fullname')}}">

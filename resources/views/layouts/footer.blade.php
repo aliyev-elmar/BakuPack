@@ -14,6 +14,10 @@
                         <li><a href="{{route('delivery')}}"><i class="fas fa-angle-right"></i> {{__('lang.Çatdırılma')}}</a></li>
                         <li><a href="{{route('gallery')}}"><i class="fas fa-angle-right"></i> {{__('lang.Qalereya')}}</a></li>
                         <li><a href="{{route('contact')}}"><i class="fas fa-angle-right"></i> {{__('lang.Əlaqə')}}</a></li>
+<<<<<<< HEAD
+=======
+
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                     </ul>
                 </div>
                 <div class="col-sm-12 col-lg-4">
@@ -47,7 +51,11 @@
     </footer>
 
 
+<<<<<<< HEAD
     <div class="wp-btn scroll-btn"><a href="https://wa.me/+994507703353" target="blank"><i class="fab fa-whatsapp"></i></a></div>
+=======
+    <div class="wp-btn scroll-btn"><a href="https://wa.me/+994507703323" target="blank"><i class="fab fa-whatsapp"></i></a></div>
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
     <div class="phone-btn scroll-btn"><a href="tel:+994505844767"><i class="fas fa-phone-alt"></i></a></div>
     <div class="back-to-top scroll-btn"><a href="javascript:void(0)"><i class="fas fa-chevron-up"></i></a></div>
 

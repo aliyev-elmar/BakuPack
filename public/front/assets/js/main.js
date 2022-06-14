@@ -8,16 +8,27 @@ $('.back-to-top').on('click', function(e) {
 });
 
 $(window).on('scroll', function() {
+<<<<<<< HEAD
   if ($(window).scrollTop() > 0) {
       $('.scroll-btn').fadeIn("fast");
   } else {
       $('.scroll-btn').fadeIn("fast");
+=======
+  if ($(window).scrollTop() > 200) {
+      $('.scroll-btn').fadeIn("fast");
+  } else {
+      $('.scroll-btn').fadeOut("fast");
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
   }
 
 });
 
 $('#carouselExampleFade').carousel({
+<<<<<<< HEAD
   interval: 10000,
+=======
+  interval: 4000,
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
   pause: false
 })
 

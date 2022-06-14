@@ -2,10 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+<<<<<<< HEAD
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\File;
 use App\Models\Sitemap;
 use App\Models\Category;
+=======
+use Illuminate\Support\Facades\File;
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -36,6 +40,7 @@ Route::group([
     Route::post(__('lang.mehsullar').('/{slug}'),[HomeController::class, 'productSinglePost'])->name('product-single-post');
     Route::post(__('lang.mehsullar'),            [HomeController::class, 'productPost'])->name('product-post');
     Route::post(__('lang.elaqe'),                [HomeController::class, 'contactPost'])->name('contact-post');
+<<<<<<< HEAD
 
     Route::get('/sitemap', function(){
         return 'dinamik sitemap';
@@ -48,4 +53,12 @@ Route::group([
 
 // Route::get('/linkstorage', function () {
 //             Artisan::call('storage:link');
+=======
+});
+
+// storage link
+
+// Route::get('/linkstorage', function () {
+//              Artisan::call('storage:link');
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
 // });

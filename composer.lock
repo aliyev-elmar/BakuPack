@@ -1041,6 +1041,7 @@
         },
         {
             "name": "guzzlehttp/guzzle",
+<<<<<<< HEAD
             "version": "7.4.4",
             "source": {
                 "type": "git",
@@ -1051,6 +1052,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e3ff079b22820c2029d4c2a87796b6a0b8716ad8",
                 "reference": "e3ff079b22820c2029d4c2a87796b6a0b8716ad8",
+=======
+            "version": "7.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
+                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                 "shasum": ""
             },
             "require": {
@@ -1145,7 +1158,11 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/guzzle/tree/7.4.4"
+=======
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.3"
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
             },
             "funding": [
                 {
@@ -1161,7 +1178,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-06-09T21:39:15+00:00"
+=======
+            "time": "2022-05-25T13:24:33+00:00"
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
         },
         {
             "name": "guzzlehttp/promises",
@@ -1504,6 +1525,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v8.83.16",
             "source": {
                 "type": "git",
@@ -1514,6 +1536,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/6be5abd144faf517879af7298e9d79f06f250f75",
                 "reference": "6be5abd144faf517879af7298e9d79f06f250f75",
+=======
+            "version": "v8.83.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "141cf126f1746c7264f59aa78c923a84eaab501e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/141cf126f1746c7264f59aa78c923a84eaab501e",
+                "reference": "141cf126f1746c7264f59aa78c923a84eaab501e",
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                 "shasum": ""
             },
             "require": {
@@ -1673,7 +1707,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2022-06-07T15:09:06+00:00"
+=======
+            "time": "2022-05-24T14:04:02+00:00"
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
         },
         {
             "name": "laravel/sanctum",
@@ -1930,6 +1968,7 @@
         },
         {
             "name": "league/commonmark",
+<<<<<<< HEAD
             "version": "2.3.3",
             "source": {
                 "type": "git",
@@ -1940,6 +1979,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/0da1dca5781dd3cfddbe328224d9a7a62571addc",
                 "reference": "0da1dca5781dd3cfddbe328224d9a7a62571addc",
+=======
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/commonmark.git",
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                 "shasum": ""
             },
             "require": {
@@ -2032,7 +2083,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-06-07T21:28:26+00:00"
+=======
+            "time": "2022-05-14T15:37:39+00:00"
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
         },
         {
             "name": "league/config",
@@ -2268,6 +2323,7 @@
         },
         {
             "name": "monolog/monolog",
+<<<<<<< HEAD
             "version": "2.7.0",
             "source": {
                 "type": "git",
@@ -2278,6 +2334,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5579edf28aee1190a798bfa5be8bc16c563bd524",
                 "reference": "5579edf28aee1190a798bfa5be8bc16c563bd524",
+=======
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/247918972acd74356b0a91dfaa5adcaec069b6c0",
+                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0",
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                 "shasum": ""
             },
             "require": {
@@ -2356,7 +2424,11 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/Seldaek/monolog/tree/2.7.0"
+=======
+                "source": "https://github.com/Seldaek/monolog/tree/2.6.0"
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
             },
             "funding": [
                 {
@@ -2368,7 +2440,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-06-09T08:59:12+00:00"
+=======
+            "time": "2022-05-10T09:36:00+00:00"
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
         },
         {
             "name": "nesbot/carbon",
@@ -6557,6 +6633,7 @@
         },
         {
             "name": "laravel/sail",
+<<<<<<< HEAD
             "version": "v1.14.10",
             "source": {
                 "type": "git",
@@ -6567,6 +6644,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/0ea5d683af4d189071efcdb9e83946c10dab82c3",
                 "reference": "0ea5d683af4d189071efcdb9e83946c10dab82c3",
+=======
+            "version": "v1.14.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "c049316f9bcb02598607307f18b514b66202b639"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/c049316f9bcb02598607307f18b514b66202b639",
+                "reference": "c049316f9bcb02598607307f18b514b66202b639",
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
                 "shasum": ""
             },
             "require": {
@@ -6613,7 +6702,11 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
+<<<<<<< HEAD
             "time": "2022-06-09T07:10:28+00:00"
+=======
+            "time": "2022-05-21T17:14:14+00:00"
+>>>>>>> aef6e7df249e22e856f0fd51488779ef5bc00d1b
         },
         {
             "name": "mockery/mockery",

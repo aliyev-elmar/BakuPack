@@ -40,7 +40,6 @@
                     <p class="delivery-title" data-aos="fade-up">{{__('lang.Çatdırılma')}}</p>
                     <p class="delivery-subtitle" data-aos="fade-up">{{__('lang.Çatdırılma_text')}}</p>
                 </div>
-                
             </div>
         </div>
     </section>

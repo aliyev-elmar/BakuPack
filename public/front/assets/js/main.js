@@ -1,5 +1,25 @@
+AOS.init();
 
+$('.back-to-top').on('click', function(e) {
+  $('html, body').animate({
+      scrollTop: $('body').offset().top,
+      scrollTop: $('html').offset().top
+  }, 500)
+});
 
+$(window).on('scroll', function() {
+  if ($(window).scrollTop() > 0) {
+      $('.scroll-btn').fadeIn("fast");
+  } else {
+      $('.scroll-btn').fadeIn("fast");
+  }
+
+});
+
+$('#carouselExampleFade').carousel({
+  interval: 10000,
+  pause: false
+})
 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 6,

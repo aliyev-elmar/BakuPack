@@ -8,52 +8,87 @@ use App\Models\Partner;
 use App\Models\Message;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\HomeSeoPage;
+use App\Models\AbuotusSeoPage;
+use App\Models\XammalSeoPage;
+use App\Models\ProductSeoPage;
+use App\Models\DeliverySeoPage;
+use App\Models\ProductionSeoPage;
+use App\Models\GallerySeoPage;
+use App\Models\ContactSeoPage;
+use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
     public function index(){
+        $home_seo       = HomeSeoPage::first();
         $carousel_items = Slider::with('translations')->limit(4)->get();
         $partners       = Partner::all();
-        return view('home',compact('carousel_items','partners'));
+        return view('home',compact('carousel_items','partners','home_seo'));
     }
 
     public function product(){
+        $seo      = ProductSeoPage::first();
         $products = Product::withTranslations()->get();
-        return view('product',compact('products'));
+        return view('product',compact('products','seo'));
     }
 
     public function productSingle($slug){
-        $category_data = Category::withTranslations()->whereSlug($slug)->first();
-        $products      = Product::withTranslations()->whereCategory($category_data->id)->get();
-        return view('product',compact('products','category_data'));
+        $categories = Category::withTranslations()->get();
+        foreach($categories as $category){
+            if($slug == $category->getTranslatedAttribute('slug', \App::getLocale(), 'az')){
+                $seo           = ProductSeoPage::first();
+                $category_data = Category::withTranslations()->whereSlug($category->slug)->first();
+                if($category_data !== null){
+                    $products      = Product::withTranslations()->whereCategory($category_data->id)->get();
+                    return view('product',compact('products','category_data','seo'));
+                }
+            }
+        }
     }
 
+    public function productSinglePost(Request $request){
+        $seo           = ProductSeoPage::first();
+        $category_data = Category::withTranslations()->whereId($request->category_id)->first();
+        $products      = Product::withTranslations()->whereCategory($request->category_id)->get();
+        return  view('product',compact('products','category_data','seo'));
+    } 
+
     public function about_us(){
-        return view('about_us');
+        $seo = AbuotusSeoPage::first();
+        return view('about_us',compact('seo'));
     }
 
     public function xammal(){
-        return view('xammal');
+        $seo = XammalSeoPage::first();
+        return view('xammal',compact('seo'));
     }
 
     public function delivery(){
-        return view('delivery');
+        $seo = DeliverySeoPage::first();
+        return view('delivery',compact('seo'));
     }
 
     public function production(){
-        return view('production');
+        $seo = ProductionSeoPage::first();
+        return view('production',compact('seo'));
     }
 
     public function gallery(){
-        return view('gallery');
+        $seo = GallerySeoPage::first();
+        return view('gallery',compact('seo'));
     }
 
     public function contact(){
-        return view('contact');
+        $seo = ContactSeoPage::first();
+        return view('contact',compact('seo'));
     }
 
-    public function contactPost(Request $request){
+    public function contactPost(ContactRequest $request){
+
         $message = new Message;
         $message->fullname = $request->fullname;
         $message->email    = $request->email;
@@ -62,7 +97,7 @@ class HomeController extends Controller
 
         try {
             $email = "info@bakupack.az";
-            $title = "Baku Pack Saytindan mesaj var!";
+            $title = "Baku Pack Saytından mesaj var!";
 
             Mail::send('send_mail', ['fullname'=>$request->fullname,'email'   =>$request->email,'phone'   =>$request->phone,'company' =>$request->company ], 
             function($message) use ($email,$title){
@@ -76,39 +111,87 @@ class HomeController extends Controller
     }
 
     public function productPost(Request $request){
+        $seo        = ProductSeoPage::withTranslations()->first();
         $categories = json_decode(json_encode($request->categories), true);
+        //data[]
+        $slug          = "";
+        $category_name = "";
+        $top_h1        = "";
+        $bottom_h2     = "";
+        $bottom_text   = "";  
+        $product_data  = array();
+
         if($categories[0] == "all-data"){
             //Butun kateqoriyalari secerse
-            $category = (object) [
-                'top_h1'     => 'Butun kateqoriyalarin h1i',
-                'top_text'   => 'Butun kateqoriyalarin top texti',
-                'bottom_h2'  => 'Butun kateqoriyalarin h2si',
-                'bottom_text'=> 'Butun kateqoriyalarin bottom texti',
-            ];
-            $products = Product::all();
+            $meta_title       = $seo->getTranslatedAttribute("meta_title", \App::getLocale(), 'az');
+            $meta_description = $seo->getTranslatedAttribute("meta_description", \App::getLocale(), 'az');
+            $meta_keywords    = $seo->getTranslatedAttribute("meta_keywords", \App::getLocale(), 'az');
+            $category         = (object) [ "data" => "all"];
+            $products         = Product::withTranslations()->get();
+            
+            foreach($products as $product){ 
+                array_push($product_data, [
+                    'name' => $product->getTranslatedAttribute("name", \App::getLocale(), 'az'),
+                    'image'=> $product->image,
+                ]);
+            }
         }
         elseif(count($categories) > 1){
             //Iki kateqoriyani eyni zamanda secerse
-            $category = (object) [
-                'top_h1'     => 'Butun kateqoriyalarin h1i',
-                'top_text'   => 'Butun kateqoriyalarin top texti',
-                'bottom_h2'  => 'Butun kateqoriyalarin h2si',
-                'bottom_text'=> 'Butun kateqoriyalarin bottom texti',
-            ];
-            $products = [];
+            $meta_title       = $seo->getTranslatedAttribute("meta_title", \App::getLocale(), 'az');
+            $meta_description = $seo->getTranslatedAttribute("meta_description", \App::getLocale(), 'az');
+            $meta_keywords    = $seo->getTranslatedAttribute("meta_keywords", \App::getLocale(), 'az');
+            $category         = (object) [ "data" => "all"];
+            $products         = [];
+
             foreach($categories as $category_id){
-                $product = Product::withTranslations()->whereCategory($category_id)->get();
-                array_push($products, $product);
-            }  
+                $product = Product::whereCategory($category_id)->withTranslations()->get();
+                array_push($products,  $product);
+            }
+            
+            foreach($products as $key => $value){
+                foreach($value as $product){
+                    array_push($product_data,  [
+                        'name' => $product->getTranslatedAttribute("name", \App::getLocale(), 'az'),
+                        'image'=> $product->image
+                    ]);
+                }
+            }
         }else{
-            //Sadece tek bir kateqoriyani secerse
+            //Sadece tek bir kateqoriyani secerse            
             foreach($categories as $category_id){
                 $category = Category::withTranslations()->find($category_id);
                 $products = Product::withTranslations()->whereCategory($category_id)->get();
-            }  
+                foreach($products as $product){
+                    array_push($product_data,  [
+                        'name' => $product->getTranslatedAttribute("name", \App::getLocale(), 'az'),
+                        'image'=> $product->image
+                    ]);
+                }
+            }
+            $slug             = $category->getTranslatedAttribute("slug", \App::getLocale(), 'az');
+            $category_name    = $category->getTranslatedAttribute("category_name", \App::getLocale(), 'az');
+            $top_h1           = $category->getTranslatedAttribute("top_h1", \App::getLocale(), 'az');
+            $bottom_h2        = $category->getTranslatedAttribute("bottom_h2", \App::getLocale(), 'az');
+            $bottom_text      = $category->getTranslatedAttribute("bottom_text", \App::getLocale(), 'az');
+            $meta_title       = $category->getTranslatedAttribute("meta_title", \App::getLocale(), 'az');
+            $meta_description = $category->getTranslatedAttribute("meta_description", \App::getLocale(), 'az');
+            $meta_keywords    = $category->getTranslatedAttribute("meta_keywords", \App::getLocale(), 'az');
         }
 
-        $data = ['category' => $category, 'products' => $products];
+        $data = [
+            'category'         => $category,
+            'products'         => $products,
+            'slug'             => $slug,
+            'category_name'    => $category_name,
+            'top_h1'           => $top_h1,
+            'bottom_h2'        => $bottom_h2,
+            'bottom_text'      => $bottom_text,
+            'product_data'     => $product_data,
+            'meta_title'       => $meta_title,
+            'meta_description' => $meta_description,
+            'meta_keywords'    => $meta_keywords
+        ];
         return $data;
     }
 }

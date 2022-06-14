@@ -1,4 +1,23 @@
+@php 
+    if(isset($category_data)){
+        $page_meta_title       = $category_data->getTranslatedAttribute('meta_title', App::getLocale(), 'az');
+        $page_meta_description = $category_data->getTranslatedAttribute('meta_description', App::getLocale(), 'az');
+        $page_meta_keywords    = $category_data->getTranslatedAttribute('meta_keywords', App::getLocale(), 'az');
+        $bottom_text           = $category_data->getTranslatedAttribute('bottom_text', App::getLocale(), 'az');
+    }else{
+        $page_meta_title       = $seo->getTranslatedAttribute('meta_title', App::getLocale(), 'az');
+        $page_meta_description = $seo->getTranslatedAttribute('meta_description', App::getLocale(), 'az');
+        $page_meta_keywords    = $seo->getTranslatedAttribute('meta_keywords', App::getLocale(), 'az');
+        $bottom_text           = __('lang.Butun_kateqoriyalarin_bottom_texti');
+    }
+
+    $meta_keywords = explode("," , $page_meta_keywords);
+    $keys_count    = count($meta_keywords);
+@endphp
 @extends('layouts.master')
+@section('meta_title'){{$page_meta_title}}@endsection
+@section('meta_description'){{$page_meta_description}}@endsection
+@section('meta_keywords'){{$page_meta_keywords}}@endsection
 @section('content')
     <!-- Page Top -->
     <section id="about-top" class="top-page">
@@ -9,9 +28,16 @@
                     <img src="{{asset('front/assets/images/p-2.jpg')}}">
                     <img src="{{asset('front/assets/images/p-1.jpg')}}">
                 </div>
+                @php 
+                    $title       = __('lang.Kataloq_title');
+                    $title_words = explode(' ', $title);
+                    $word_count  = count($title_words);
+                @endphp
                 <div class="col-lg-6">
-                    <h2 class="title"><span>Baku</span> Pack</h2>
-                    <p>BakuPolygraphy 50 nəfərə yaxın heyətdən ibarət olan və yeni avadlıqlarla təmin olunan şirkətdir və bütün növ karton qutu və qablaşdırma məhsullarını hazırlamaq gücünə malikdir. Biz qısa müddət ərzində müştərilərimizn çox yüksək rəyinə nail olmağı bacarmışıq. Şirkət tələb olunan istehsalat prosesinin hər mərhələsinə qüsursuz və keyfiyyətlə yanaşır, imic və reputasyasını qoruyur</p>
+                    <h2 class="title">
+                        @for($i=0;$i<$word_count;$i++) @if($i==0) <span class="home-yellow">{{$title_words[$i]}}</span> @else {{$title_words[$i]}}  @endif @endfor
+                    </h2>
+                    <p>{{__('lang.Kataloq_text')}}</p>
                 </div>
             </div>
         </div>
@@ -20,9 +46,9 @@
     <section id="breadcrumb" class="main-section">
         <div class="container">
             <ul>
-                <li><a href="{{route('home')}}">{{__('lang.Ana səhifə')}}</a></li>
-                <li><i class="fas fa-slash"></i> {{__('lang.Məhsullar')}} <i class="fas fa-slash"></i> </li>
-                <li class="cat_name">@if(@isset($category_data)) {{$category_data->category_name}} @endif</li>
+                <li><a href="{{route('home')}}">{{__('lang.Ana_səhifə')}}</a></li>
+                <li><i class="fas fa-slash"></i> <a href="{{route('product')}}">{{__('lang.Məhsullar')}}</a> <i class="fas fa-slash"></i></li>
+                <li class="cat_name">@if(@isset($category_data)) {{$category_data->getTranslatedAttribute('category_name', App::getLocale(), 'az')}} @endif</li>
             </ul>
         </div>
     </section>
@@ -36,38 +62,41 @@
                         @csrf
                         <h5>{{__('lang.Kateqoriyalar')}}</h5>
                         <label>
-                            <input type="checkbox"  class="categories" name="categories[]" value="all-data">
+                            <input type="checkbox"  class="categories" name="categories[]" value="all-data" @if(!Request::segment(2)) checked @endif>
                             <span class="checkbox"></span>
-                            {{__('lang.Bütün məhsullar')}}
+                            {{__('lang.Bütün_məhsullar')}}
                         </label>
                         @foreach ($categories as $category)
                         <label>
                             <input type="checkbox" class="categories" name="categories[]" value="{{$category->id}}" @if(@isset($category_data) && ($category_data->category_name == $category->category_name) ) checked @endif>
                             <span class="checkbox"></span>
-                            {{$category->category_name}}
-                           
+                            {{$category->getTranslatedAttribute('category_name', App::getLocale(), 'az')}}
                         </label>
                         @endforeach
                     </form>
                 </div>
                 <div class="col-lg-9">
-                    <h1 class="title" id="top_h1">Butun kateqoriyalarin h1i</h1>
-                    <p id="top_text">Butun kateqoriyalarin top texti</p>
+                    <h1 class="title" id="top_h1" data-aos="fade-up">@if(@isset($category_data)) {!! $category_data->getTranslatedAttribute('top_h1', App::getLocale(), 'az') !!} @else {{__('lang.Butun_kateqoriyalarin_h1')}}  @endif</h1>
                     
                     <div class="products">
                         {{-- Data from ajax --}}
                         @foreach ($products as $product)
-                        <div class='card'>
+                        <div class='card' data-aos="fade-up">
                             <div class='card-img'>
-                                <img src="{{asset('storage/'.$product->image)}}" />
+                                <img src="{{asset('storage/'.$product->image)}}" 
+                                @for($i=0;$i <$keys_count; $i++) 
+                                    @if($i >= $loop->index) 
+                                        alt="{{@trim($meta_keywords[$loop->index])}}" 
+                                    @endif 
+                                @endfor />
                             </div>
-                            <p class='card-title'>{{$product->name}}</p>
+                            <p class='card-title'>{{$product->getTranslatedAttribute('name', App::getLocale(), 'az')}}</p>
                         </div>
                         @endforeach
                     </div>
 
-                    <h2 class="title" id="bottom_h2">Butun kateqoriyalarin h2si</h2>
-                    <p id="bottom_text">Butun kateqoriyalarin bottom texti</p>
+                    <h2 class="title" id="bottom_h2" data-aos="fade-up">@if(@isset($category_data)) {!! $category_data->getTranslatedAttribute('bottom_h2', App::getLocale(), 'az') !!} @else {{__('lang.Butun_kateqoriyalarin_h2')}} @endif</h2>
+                    <div id="bottom_text" data-aos="fade-up">{!! $bottom_text !!}</div>
                 </div>
             </div>
         </div>
@@ -80,10 +109,10 @@
 $('.categories').change(function() {
 
     if( $('.categories:checked').length){
-    var categories = [];
-    $('.categories:checked').each(function(i,v) {
-        categories.push($(v).val());
-    });
+        var categories = [];
+        $('.categories:checked').each(function(i,v) {
+            categories.push($(v).val());
+        });
         $.ajax({
             url         :   '{{ route('product-post') }}',
             type        :   'POST',
@@ -92,30 +121,50 @@ $('.categories').change(function() {
                 _token :'{{ csrf_token() }}'
             },
             success     :   function ( data ) {
+                
                 let category = data.category;
                 let products = data.products;
-                let nextURL = "{{route('product')}}";
-
-                if (typeof category.slug !== 'undefined') {
-                    nextURL   = "{{route('product')}}/"+category.slug;
-                    $('.cat_name').text(category.category_name);
+                let nextURL  = "{{route('product')}}";
+                
+                if (typeof data.slug !== 'undefined') {
+                    nextURL   = "{{route('product')}}/"+data.slug;
+                    $('.cat_name').text(data.category_name);
                 }else{
-                    $('.cat_name').text('Qarışıq');
+                    $('.cat_name').text("{{__('lang.Qarışıq')}}");
                 }  
 
-                const nextTitle = category.category_name;
+                const nextTitle = data.category_name;
                 const nextState = { additionalInformation: 'Updated the URL with JS' };
                 window.history.pushState(nextState, nextTitle, nextURL);
                 window.history.replaceState(nextState, nextTitle, nextURL);
+
+                $('#top_h1').html('');
+                $('#bottom_h2').html('');
+                $('#bottom_text').html('');
                 
-                $('#top_h1').text(category.top_h1);
-                $('#top_text').text(category.top_text);
-                $('#bottom_h2').text(category.bottom_h2);
-                $('#bottom_text').text(category.bottom_text);
+                if(category.data === 'all'){
+                    let top_h1      = "{{__('lang.Butun_kateqoriyalarin_h1')}}";
+                    let bottom_h2   = "{{__('lang.Butun_kateqoriyalarin_h2')}}";
+                    let bottom_text = "{{__('lang.Butun_kateqoriyalarin_bottom_texti')}}";
+                    
+                    $('title').html(data.meta_title);
+                    $('meta[name=description]').attr('content',data.meta_description);
+                    $('meta[name=keyword]').attr('content',data.meta_keywords);
+                    $('#top_h1').html(top_h1);
+                    $('#bottom_h2').html(bottom_h2);
+                    $('#bottom_text').html(bottom_text);
+                }else{
+                    $('title').html(data.meta_title);
+                    $('meta[name=description]').attr('content',data.meta_description);
+                    $('meta[name=keyword]').attr('content',data.meta_keywords);
+                    $('#top_h1').html(data.top_h1);
+                    $('#bottom_h2').html(data.bottom_h2);
+                    $('#bottom_text').html(data.bottom_text);
+                }
 
                 let products_html = new Array();
-                if(products.length > 0){
-                    products.forEach((product) => {
+                if(data.product_data.length > 0){
+                    data.product_data.forEach((product) => {
                         if(Array.isArray(product)){
                             product.forEach((p) => {
                                 let product_html = `<div class='card'><div class='card-img'><img src="{{asset('storage/${p.image}')}}" /></div><p class='card-title'>${p.name}</p></div>`;
@@ -137,12 +186,18 @@ $('.categories').change(function() {
                 }
                 else{
                     $('.products').empty();
-                    $('.products').text('Məhsul yoxdur');
+                    $('.products').text("{{__('lang.Məhsul_yoxdur')}}");
                 }
             }
         });
+    }else{
+        $('.products').empty();
+        $('#top_h1').html('');
+        $('#bottom_h2').html('');
+        $('#bottom_text').html('');
+        $('.products').text("{{__('lang.Məhsul_yoxdur')}}");
     }
 });
-    
 </script>
+
 @endpush

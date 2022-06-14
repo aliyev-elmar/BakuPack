@@ -1,10 +1,13 @@
 @extends('layouts.master')
+@section('meta_title'){{$seo->getTranslatedAttribute('meta_title', App::getLocale(), 'az')}}@endsection
+@section('meta_description'){{$seo->getTranslatedAttribute('meta_description', App::getLocale(), 'az')}}@endsection
+@section('meta_keywords'){{$seo->getTranslatedAttribute('meta_keywords', App::getLocale(), 'az')}}@endsection
 @section('content')
     <!-- Breadcrumb -->
     <section id="breadcrumb">
         <div class="container">
             <ul>
-                <li><a href="{{route('home')}}">{{__('lang.Ana səhifə')}}</a></li>
+                <li><a href="{{route('home')}}">{{__('lang.Ana_səhifə')}}</a></li>
                 <li><i class="fas fa-slash"></i> {{__('lang.Xammal')}}</li>
             </ul>
         </div>
@@ -14,63 +17,67 @@
         <div class="container">
         
             <div class="title-div">
-                <h2 class="title">{{__('lang.Xammal')}}</h2>
+                <h1 class="title" data-aos="fade-up">{{__('lang.Xammal')}}</h1>
             </div>
 
             <div class="row">
                 <div class="col-12">
-                    <p class="xammal-title">{{__('lang.Qablaşdırma məhsulları')}}</p>
-                    <p class="xammal-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <h2 class="xammal-title" data-aos="fade-up">{{__('lang.Xammal_title')}}</h2>
+                    <p class="xammal-subtitle" data-aos="fade-up">{{__('lang.Xammal_text')}}</p>
                 </div>
+                @php
+                    $keywords = $seo->getTranslatedAttribute('meta_keywords', App::getLocale(), 'az');
+                    $keys_arr = explode(",", $keywords);
+                @endphp
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up">
                         <div class="card-img">
-                            <img src="front/assets/images/product.jpg">
+                            <img src="{{asset('front/assets/images/melovka.jpg')}}" alt="{{$keys_arr[0]}}">
                         </div>
                         <div class="card-body">
-                            <p class="card-title">Melovka</p>
-                            <p class="card-subtitle">C2S Parlag 170,200,250</p>
-                            <p class="card-subtitle">C2S Matt 170,200,250</p>    
+                            <p class="card-title">{{__('lang.xammal_birinci_title')}}</p>
+                            <p class="card-subtitle">{{__('lang.xammal_birinci_subtitle')}}</p>
+                            <p class="card-subtitle">{{__('lang.xammal_birinci_subtitle2')}}</p>    
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up">
                         <div class="card-img">
-                            <img src="front/assets/images/product.jpg">
+                            <img src="{{asset('front/assets/images/bristol.jpg')}}" alt="{{$keys_arr[1]}}">
                         </div>
                         <div class="card-body">
-                            <p class="card-title">Bristol</p>
-                            <p class="card-subtitle">C2S Parlag 170,200,250</p>
-                            <p class="card-subtitle">C2S Matt 170,200,250</p>    
+                            <p class="card-title">{{__('lang.xammal_ikinci_title')}}</p>
+                            <p class="card-subtitle">{{__('lang.xammal_ikinci_subtitle')}}</p>
+                            <p class="card-subtitle">{{__('lang.xammal_ikinci_subtitle2')}}</p>    
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up">
                         <div class="card-img">
-                            <img src="front/assets/images/product.jpg">
+                            <img src="{{asset('front/assets/images/karton.jpg')}}" alt="{{$keys_arr[2]}}">
                         </div>
                         <div class="card-body">
-                            <p class="card-title">Karton ( kitab kartonu)</p>
-                            <p class="card-subtitle">1mm, 1.2mm. 1.5mm. 2mm. 2.5mm</p>
+                            <p class="card-title">{{__('lang.xammal_ucuncu_title')}}</p>
+                            <p class="card-subtitle">{{__('lang.xammal_ucuncu_subtitle')}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up">
                         <div class="card-img">
-                            <img src="front/assets/images/product.jpg">
+                            <img src="{{asset('front/assets/images/laminasiya.jpeg')}}" alt="{{$keys_arr[0]}}">
                         </div>
                         <div class="card-body">
-                            <p class="card-title">Laminaciya</p>
-                            <p class="card-subtitle">Matt, gızılı, parlag, sədəf</p>
+                            <p class="card-title">{{__('lang.xammal_dorduncu_title')}}</p>
+                            <p class="card-subtitle">{{__('lang.xammal_dorduncu_subtitle')}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
-                    <p class="xammal-title">Qablaşdırma məhsulları</p>
-                    <p class="xammal-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    <h2 class="xammal-title" data-aos="fade-up">{{__('lang.Xammal_title1')}}</h2>
+                    <p class="xammal-subtitle" data-aos="fade-up">{{__('lang.Xammal_text1')}}</p>
                 </div>
             </div>
         

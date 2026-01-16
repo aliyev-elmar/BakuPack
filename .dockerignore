@@ -2,7 +2,6 @@
 .gitignore
 .gitattributes
 node_modules
-vendor
 .env
 .env.backup
 .phpunit.result.cache

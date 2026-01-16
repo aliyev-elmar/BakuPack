@@ -10,6 +10,8 @@ services:
         working_dir: /var/www/html
         volumes:
             - ./:/var/www/html
+            - /var/www/html/vendor  # Protect vendor directory from being overwritten
+            - /var/www/html/node_modules  # Protect node_modules too
             - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
         networks:
             - bakupack_network

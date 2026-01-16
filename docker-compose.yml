@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: bakupack_app
+        restart: unless-stopped
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+            - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+        networks:
+            - bakupack_network
+        ports:
+            - "8080:80"
+        depends_on:
+            - db
+        environment:
+            - DB_HOST=db
+            - DB_PORT=3306
+            - DB_DATABASE=bakupack
+            - DB_USERNAME=bakupack_user
+            - DB_PASSWORD=bakupack_pass
+
+    db:
+        image: mysql:8.0
+        container_name: bakupack_db
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: bakupack
+            MYSQL_ROOT_PASSWORD: root_password
+            MYSQL_USER: bakupack_user
+            MYSQL_PASSWORD: bakupack_pass
+        volumes:
+            - dbdata:/var/lib/mysql
+        networks:
+            - bakupack_network
+        ports:
+            - "3307:3306"
+
+networks:
+    bakupack_network:
+        driver: bridge
+
+volumes:
+    dbdata:
+        driver: local
